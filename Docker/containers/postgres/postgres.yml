@@ -1,0 +1,9 @@
+version: '2'
+services:
+  COFFEETIME:
+    image: postgres:11.5
+    environment:
+      - POSTGRES_USER=userCoffee
+      - POSTGRES_PASSWORD=userCoffee
+    ports:
+      - '5432:5432'
