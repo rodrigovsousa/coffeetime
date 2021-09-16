@@ -12,9 +12,6 @@
             <column name="NOME" type="VARCHAR(20)" autoIncrement="true" remarks="NOME DO CARGO">
                 <constraints nullable="true"/>
             </column>
-
         </createTable>
-
     </changeSet>
-
 </databaseChangeLog>
