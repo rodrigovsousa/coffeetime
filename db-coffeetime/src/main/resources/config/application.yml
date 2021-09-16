@@ -1,7 +1,12 @@
 spring:
+<<<<<<< HEAD
   application:
     name: db-coffeetime
 
+=======
+  aplication:
+    name: db-coffeetime
+>>>>>>> 283afe10057d75bbab801d6b1a90fb79158444bf
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/postgres
