@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="150920202004-05" author="matheus.meneses">
+        <createTable tableName="EVENTO">
+            <column name="ID" type="INTEGER"  autoIncrement="true" remarks="identificador da tabela usuario">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="DATA" type="TIMESTAMP"  remarks="coluna que armazena a data do evento">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JUSTIFICATIVAADIAMENTO" type="VARCHAR(200)"  remarks="coluna que armazena o adiamento do evento">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MOTIVO_ID" type="INTEGER" remarks="coluna que armazena codigo do motivo do cancelamento">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VALOR" type="DECIMAL"  remarks="coluna que armazena o valor do evento">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SITUACAO" type="INTEGER"  remarks="coluna que armzena o ID da situacao do evento">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PATROCINADOR" type="VARCHAR(80)" remarks="coluna para armazenar o partrocinador do evento">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet  author="matheus.meneses"  id="150920202005-10">
+            <addForeignKeyConstraint  baseColumnNames="MOTIVO_ID"
+                                      baseTableName="EVENTO"
+                                      baseTableSchemaName="public"
+                                      constraintName="fk_motivo_evento"
+                                      referencedColumnNames="ID"
+                                      referencedTableName="MOTIVO"
+                                      referencedTableSchemaName="public"
+                                      validate="true"/>
+
+    </changeSet>
+
+    <changeSet  author="matheus.meneses"  id="150920202005-07">
+        <addForeignKeyConstraint  baseColumnNames="SITUACAO"
+                                  baseTableName="EVENTO"
+                                  baseTableSchemaName="public"
+                                  constraintName="fk_situacao_evento"
+                                  referencedColumnNames="ID"
+                                  referencedTableName="SITUACAO"
+                                  referencedTableSchemaName="public"
+                                  validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>
