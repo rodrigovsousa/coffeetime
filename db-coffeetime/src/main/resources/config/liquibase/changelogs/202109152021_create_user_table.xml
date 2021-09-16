@@ -36,7 +36,7 @@
             </createTable>
         </changeSet>
 
-        <changeSet id="150920202005-11" author="erick.leone">
+        <changeSet id="202109151425" author="erick.leone">
             <addForeignKeyConstraint baseColumnNames="CARGO_ID" baseTableName="USUARIO" constraintName="fk_cargo_usuario" referencedColumnNames="ID" referencedTableName="CARGO" />
         </changeSet>
 
