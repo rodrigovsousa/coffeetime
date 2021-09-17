@@ -3,15 +3,13 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
     <changeSet id ="202109151425" author="rodrigo">
-        <createTable tableName="MOTIVO">
+        <createTable tableName="SITUACAO">
             <column name="ID" type="INT" autoIncrement="true" remarks="IDENTIFICADOR DA TABELA MOTIVO">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="DESCRICAO" type="VARCHAR(20)" autoIncrement="true" remarks="DESCRICAO DO MOTIVO">
-                <constraints nullable="true"/>
-            </column>
-            <column name="TITULO" type="VARCHAR(200)" autoIncrement="true" remarks="DESCRICAO DO TITULO">
+            <column name="DESCRICAO" type="VARCHAR(20)" autoIncrement="true" remarks="DESCRICAO DA SITUCAO">
                 <constraints nullable="true"/>
             </column>
         </createTable>
