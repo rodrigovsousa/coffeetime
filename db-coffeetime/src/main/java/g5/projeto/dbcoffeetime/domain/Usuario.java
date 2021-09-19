@@ -1,11 +1,12 @@
 package g5.projeto.dbcoffeetime.domain;
-import javassist.bytecode.ByteArray;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -22,14 +23,6 @@ public class Usuario  implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Column(name = "cpf")
     private String cpf;
 
@@ -37,7 +30,8 @@ public class Usuario  implements Serializable {
     private String email;
 
     @Column(name = "foto")
-    private ByteArray foto;
+    @Lob
+    private byte[] foto;
 
     @Column(name = "datadenascimento")
     private LocalDate dataDeNascimento;
@@ -59,5 +53,5 @@ public class Usuario  implements Serializable {
     }, inverseJoinColumns = {
             @JoinColumn(name="id_evento")
     })
-    private List <Evento> evento;
+    private List<Evento> evento;
 }

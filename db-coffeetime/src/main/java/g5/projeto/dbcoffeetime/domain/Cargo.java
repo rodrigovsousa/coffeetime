@@ -1,15 +1,21 @@
 package g5.projeto.dbcoffeetime.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+
+@Getter
+@Setter
 @Entity
-@Table(nome = "cargo")
+@Table(name = "cargo")
 public class Cargo {
 
     @Id
-    @GeneratedValue
-    private Long
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name = "ID", nullable = false)
+    private Long id;
+    @Column (name = "DESCRICAO", nullable = false, length = 20)
+    private String descricao;
+
 }

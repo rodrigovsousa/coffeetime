@@ -1,6 +1,7 @@
 package g5.projeto.dbcoffeetime.service.dto;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
+
+import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;

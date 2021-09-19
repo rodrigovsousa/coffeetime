@@ -33,7 +33,7 @@
                                   baseTableSchemaName="public"
                                   constraintName="fk_usuarioevento_usuario"
                                   referencedColumnNames="ID"
-                                  referencedTableName="USUARIO"
+                                  referencedTableName="usuario"
                                   referencedTableSchemaName="public"
                                   validate="true"/>
     </changeSet>
