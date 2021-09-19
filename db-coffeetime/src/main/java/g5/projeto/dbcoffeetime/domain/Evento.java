@@ -1,4 +1,2 @@
-package g5.projeto.dbcoffeetime.domain;
-
-public class Evento {
+package g5.projeto.dbcoffeetime.domain;public class Evento {
 }
