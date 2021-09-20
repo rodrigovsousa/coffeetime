@@ -1,4 +1,4 @@
-package g5.projeto.dbcoffeetime.service.dto.mapper;
+package g5.projeto.dbcoffeetime.service.mapper;
 
 import java.util.List;
 

@@ -25,7 +25,6 @@ public class UsuarioRecurso {
         List<Usuario> usuarios = usuarioService.buscarTodos();
         return ResponseEntity.ok(usuarios);
 
-
     }
 
     @GetMapping("/{id}")
