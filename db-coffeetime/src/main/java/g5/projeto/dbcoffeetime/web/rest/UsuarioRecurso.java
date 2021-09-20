@@ -2,6 +2,7 @@ package g5.projeto.dbcoffeetime.web.rest;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.service.UsuarioService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,11 +31,16 @@ public class UsuarioRecurso {
         Usuario usuario = usuarioService.buscar(id);
         return ResponseEntity.ok(usuario);
     }
+    @GetMapping("/{id}/foto")
+    public ResponseEntity buscarFoto(@PathVariable Long id) {
+        String foto = usuarioService.buscarFoto(id);
+        return ResponseEntity.ok(foto);
+    }
 
-    @PostMapping
-    public ResponseEntity.BodyBuilder cadastrar(@RequestBody Usuario usuario) throws URISyntaxException {
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity cadastrar(@RequestBody Usuario usuario) throws URISyntaxException {
         Usuario usuarioCriado = usuarioService.salvar(usuario);
-        return ResponseEntity.created(new URI("/api/usuarios/"+usuarioCriado.getId()));
+        return ResponseEntity.created(new URI("/api/usuarios/"+usuarioCriado.getId())).build();
     }
 
     @PutMapping
@@ -44,9 +50,9 @@ public class UsuarioRecurso {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity.BodyBuilder deletar(@PathVariable Long id) {
+    public ResponseEntity deletar(@PathVariable Long id) {
         usuarioService.deletar(id);
-        return ResponseEntity.ok();
+        return ResponseEntity.ok().build();
     }
 }
 

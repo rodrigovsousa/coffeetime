@@ -17,7 +17,9 @@ public class UsuarioService {
 
     private final UsuarioRepositorio usuarioRepositorio;
 
-    public Usuario buscar(Long id) {return usuarioRepositorio.getById(id);}
+    public Usuario buscar(Long id) {
+        return usuarioRepositorio.findById(id).orElse(null);
+    }
 
     public List<Usuario> buscarTodos() {
         return usuarioRepositorio.findAll();
@@ -34,5 +36,12 @@ public class UsuarioService {
     public void deletar(Long id) {
          usuarioRepositorio.deleteById(id);
     }
+
+    public String buscarFoto (Long idUsuario){
+
+      Usuario usuario =  usuarioRepositorio.findById(idUsuario).get();
+      return usuario.getFoto();
+    }
+
 
 }
