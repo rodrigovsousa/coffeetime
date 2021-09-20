@@ -5,22 +5,28 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @Getter
 @Setter
-public class SelectDTO {
+public class EventoDTO {
 
     @NotNull
-    private Long value;
-
-    @NotNull
-    private String nome;
+    private Long id;
 
     @NotNull
     @NotBlank
-    private SelectDTO cargo;
+    private LocalDate data;
 
     @NotNull
     @NotBlank
-    private boolean status;
+    private String justificativaAdiamento;
+
+    @NotNull
+    @NotBlank
+    private Double valor;
+
+    @NotNull
+    @NotBlank
+    private String patrocinador;
 }

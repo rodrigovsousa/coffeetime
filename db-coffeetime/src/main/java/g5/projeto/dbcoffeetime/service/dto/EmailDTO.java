@@ -5,22 +5,22 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
-public class SelectDTO {
+public class EmailDTO {
 
     @NotNull
-    private Long value;
-
-    @NotNull
-    private String nome;
+    private String assunto;
 
     @NotNull
     @NotBlank
-    private SelectDTO cargo;
+    private String destinatario;
 
     @NotNull
-    @NotBlank
-    private boolean status;
+    private String corpo;
+
+    private List<String> copias new = ArrayList<>();
 }
