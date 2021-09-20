@@ -5,8 +5,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
-    <changeSet id="150920202004-05" author="matheus.meneses">
-        <createTable tableName="EVENTO">
+    <changeSet id="150920212004" author="matheus.meneses">
+        <createTable tableName="evento">
             <column name="ID" type="INTEGER"  autoIncrement="true" remarks="identificador da tabela usuario">
                 <constraints primaryKey="true"/>
             </column>
@@ -22,7 +22,7 @@
             <column name="VALOR" type="DECIMAL"  remarks="coluna que armazena o valor do evento">
                 <constraints nullable="false"/>
             </column>
-            <column name="SITUACAO" type="INTEGER"  remarks="coluna que armzena o ID da situacao do evento">
+            <column name="situacao" type="INTEGER"  remarks="coluna que armzena o ID da situacao do evento">
                 <constraints nullable="false"/>
             </column>
             <column name="PATROCINADOR" type="VARCHAR(80)" remarks="coluna para armazenar o partrocinador do evento">
@@ -32,25 +32,25 @@
         </createTable>
     </changeSet>
 
-    <changeSet  author="matheus.meneses"  id="150920202005-10">
+    <changeSet  author="matheus.meneses"  id="150920212007">
             <addForeignKeyConstraint  baseColumnNames="MOTIVO_ID"
-                                      baseTableName="EVENTO"
+                                      baseTableName="evento"
                                       baseTableSchemaName="public"
                                       constraintName="fk_motivo_evento"
                                       referencedColumnNames="ID"
-                                      referencedTableName="MOTIVO"
+                                      referencedTableName="motivo"
                                       referencedTableSchemaName="public"
                                       validate="true"/>
 
     </changeSet>
 
-    <changeSet  author="matheus.meneses"  id="150920202005-07">
-        <addForeignKeyConstraint  baseColumnNames="SITUACAO"
+    <changeSet  author="matheus.meneses"  id="150920212006">
+        <addForeignKeyConstraint  baseColumnNames="situacao"
                                   baseTableName="EVENTO"
                                   baseTableSchemaName="public"
                                   constraintName="fk_situacao_evento"
                                   referencedColumnNames="ID"
-                                  referencedTableName="SITUACAO"
+                                  referencedTableName="situacao"
                                   referencedTableSchemaName="public"
                                   validate="true"/>
     </changeSet>
