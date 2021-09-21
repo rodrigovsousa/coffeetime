@@ -11,8 +11,8 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", uses = {})
 public interface UsuarioEventoMapper extends EntityMapper<SelectDTO, Cargo> {
 
-    @Mapping(source = "id", target = "value");
-    @Mapping(source = "descricao", target = "label");
+    @Mapping(source = "id", target = "value")
+    @Mapping(source = "descricao", target = "label")
     SelectDTO toDto(Cargo cargo);
 
     @Override

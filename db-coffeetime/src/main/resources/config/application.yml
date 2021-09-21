@@ -9,6 +9,10 @@ spring:
     password: userCoffee
   liquibase:
     change-log: classpath:/config/liquibase/master.xml
+<<<<<<< HEAD
+=======
+
+>>>>>>> 207e46fda28999f21ba670f38f2ac154a8b00000
   mail:
     host: smtp.gmail.com
     port: 587

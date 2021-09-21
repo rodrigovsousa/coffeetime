@@ -2,9 +2,9 @@ package g5.projeto.dbcoffeetime.service.mapper;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
+import org.mapstruct.Mapper;
 
-public interface UsuarioMapper
+@Mapper(componentModel = "spring", uses = Cargo.class)
+public interface UsuarioMapper extends EntityMapper <UsuarioDTO, Usuario>{
 
-    extends EntityMapper<UsuarioDTO, Usuario>{
-
-}
+};
