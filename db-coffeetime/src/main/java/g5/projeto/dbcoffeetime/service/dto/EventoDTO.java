@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -14,6 +16,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
+@Table(indexes = {
+        @Index(name = "idx_eventodto_patrocinador", columnList = "patrocinador")
+})
 @Getter
 @Setter
 @AllArgsConstructor
@@ -33,6 +38,10 @@ public class EventoDTO implements Serializable {
     private Double valor;
 
     @NotNull
+<<<<<<< HEAD
+    @NotBlank
+    private String patrocinador;
+=======
     private Situacao situacao;
 
     @NotNull
@@ -41,3 +50,4 @@ public class EventoDTO implements Serializable {
     @NotBlank
     private List<Usuario> usuario;
 }
+>>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5

@@ -17,6 +17,9 @@ public class UsuarioListagemDTO implements Serializable {
     private String email;
     private SelectDTO cargo;
     private boolean status;
+<<<<<<< HEAD
+};
+=======
 
     public UsuarioListagemDTO(Long id, String nome, String email, SelectDTO cargo, boolean status) {
         this.id = id;
@@ -26,4 +29,5 @@ public class UsuarioListagemDTO implements Serializable {
         this.status = status;
     }
 }
+>>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
 

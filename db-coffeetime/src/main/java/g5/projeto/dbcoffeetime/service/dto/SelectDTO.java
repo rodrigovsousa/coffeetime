@@ -14,4 +14,4 @@ public class SelectDTO {
     private SelectDTO cargo;
 
     private boolean status;
-}
+};
