@@ -30,10 +30,6 @@ public class Usuario  implements Serializable {
     @Column(name = "EMAIL")
     private String email;
 
-    @Column(name = "FOTO", columnDefinition="TEXT")
-    @Lob
-    private String foto;
-
     @Column(name = "DATANASCIMENTO")
     private LocalDate dataDeNascimento;
 
