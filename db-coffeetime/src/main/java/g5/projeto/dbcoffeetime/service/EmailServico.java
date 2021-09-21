@@ -18,19 +18,20 @@ public class EmailServico {
 
     private final JavaMailSender javaMailSender;
 
-    private final ApplicationProperties;
+    private final ApplicationProperties applicationProperties;
 
     @SneakyThrows
     public void sendEmail(EmailDTO emailDTO) {
+
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
-        MimeMessageHelper mime =  new MimeMessageHelper(MimeMessage, multipart: false );
+        MimeMessageHelper mime = new MimeMessageHelper((mimeMessage, false);
 
         mime.setTo(emailDTO.getDestinatario());
         mime.setFrom(applicationProperties.getEnderecoRemetente());
         mime.setSubject(emailDTO.getAssunto());
 
         for(String s: emailDTO.getCopias()){
-            mime.addCc(S);
+            mime.addCc(s);
         }
 
         mime.setText("Aqui vamos colocar quem vai patrocinar, temos que setar o patrocinador");

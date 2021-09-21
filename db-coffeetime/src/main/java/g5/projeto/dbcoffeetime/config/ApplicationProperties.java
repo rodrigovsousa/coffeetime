@@ -4,9 +4,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties
+@ConfigurationProperties(prefix = "aplication")
 public class ApplicationProperties {
 
-    private String enderecoRemente;
-    private String nomeRemetente
+    private String enderecoRemetente;
+    private String nomeRemetente;
+
 }

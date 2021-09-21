@@ -5,22 +5,24 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
-public class SelectDTO {
+public class MotivoDTO {
 
     @NotNull
-    private Long value;
-
-    @NotNull
-    private String nome;
+    private Long id;
 
     @NotNull
     @NotBlank
-    private SelectDTO cargo;
+    @Size(max = 20)
+    private String descricao;
 
     @NotNull
     @NotBlank
-    private boolean status;
+    @Size(max = 200)
+    private String titulo;
+
+
 }

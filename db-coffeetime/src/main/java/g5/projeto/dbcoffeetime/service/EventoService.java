@@ -1,6 +1,5 @@
 package g5.projeto.dbcoffeetime.service;
 
-
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;

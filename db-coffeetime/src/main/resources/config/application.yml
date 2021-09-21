@@ -22,8 +22,8 @@ spring:
             enable: true
             required: true
           quitwait: false
+
 application:
   email:
-    endereco-remetente: grupo5@gmail.com
-    nome-remetente: db-coffeetime
-
+    endereco-remetente:
+    nome-remetente: CoffeeTime
