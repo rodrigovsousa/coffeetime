@@ -32,11 +32,6 @@ public class UsuarioRecurso {
         Usuario usuario = usuarioService.buscar(id);
         return ResponseEntity.ok(usuario);
     }
-    @GetMapping("/{id}/foto")
-    public ResponseEntity buscarFoto(@PathVariable Long id) {
-        String foto = usuarioService.buscarFoto(id);
-        return ResponseEntity.ok(foto);
-    }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UsuarioDTO> cadastrar(@RequestBody UsuarioDTO usuarioDTO) throws URISyntaxException {

@@ -1,7 +1,10 @@
 package g5.projeto.dbcoffeetime.service;
 
+<<<<<<< HEAD
 
 import g5.projeto.dbcoffeetime.config.ApplicationPropertier;
+=======
+>>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
 import g5.projeto.dbcoffeetime.config.ApplicationProperties;
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
 import lombok.RequiredArgsConstructor;
@@ -13,14 +16,23 @@ import org.springframework.stereotype.Service;
 import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 
+<<<<<<< HEAD
 @Transactional
 @Service
+=======
+@Service
+@Transactional
+>>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
 @RequiredArgsConstructor
 public class EmailServico {
 
     private final JavaMailSender javaMailSender;
 
+<<<<<<< HEAD
     private final ApplicationPropertier applicationProperties;
+=======
+    private final ApplicationProperties applicationProperties;
+>>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
 
     @SneakyThrows
     public  void sedEmail(EmailDTO emailDTO){
@@ -30,7 +42,7 @@ public class EmailServico {
         MimeMessageHelper mime = new MimeMessageHelper(mimeMessage, false);
 
         mime.setTo(emailDTO.getDestinatario());
-        mime.setFrom(applicationProperties.getEndecoRemetente());
+        mime.setFrom(applicationProperties.getEnderecoRemetente());
         mime.setSubject((emailDTO.getAssunto()));
 
         for(String s: emailDTO.getCopias()){
@@ -44,6 +56,7 @@ public class EmailServico {
 
     }
 
+<<<<<<< HEAD
     private final ApplicationProperties applicationProperties;
 
     @SneakyThrows
@@ -64,4 +77,6 @@ public class EmailServico {
 
         javaMailSender.send(mimeMessage);
     }
+=======
+>>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
 }

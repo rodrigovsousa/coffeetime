@@ -43,13 +43,6 @@ public class UsuarioService {
          usuarioRepositorio.deleteById(id);
     }
 
-    public String buscarFoto (Long idUsuario){
-
-      Usuario usuario =  usuarioRepositorio.findById(idUsuario).get();
-      return usuario.getFoto();
-    }
-
-
     public UsuarioMapper getUsuarioMapper() {
         return usuarioMapper;
     }

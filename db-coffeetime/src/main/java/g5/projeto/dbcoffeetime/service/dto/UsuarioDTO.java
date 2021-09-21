@@ -1,46 +1,48 @@
 package g5.projeto.dbcoffeetime.service.dto;
 
+import g5.projeto.dbcoffeetime.domain.Evento;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UsuarioDTO {
 
-    @NotNull
     private Long id;
 
-    @NotNull
     @NotBlank
     @Size(max = 120)
     private String nome;
 
-    @NotNull
-    @Size(min = 9, max = 11)
+    @CPF
     private String cpf;
 
     @Email
-    @NotNull
-    @NotBlank
-    @Size(max = 225)
     private String email;
 
-    @NotNull
-    private String foto;
-
-    @NotNull
-    @Past
+    @NotBlank
     private LocalDate dataDeNascimento;
 
-    @NotNull
     @NotBlank
     private boolean status;
 
-    @NotNull
-    @Size(max = 15)
+    @NotBlank
+    @Size(min = 11, max = 15)
     private String telefone;
 
+<<<<<<< HEAD
 };
+=======
+    @NotBlank
+    private List<Evento> evento;
+}
+>>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5

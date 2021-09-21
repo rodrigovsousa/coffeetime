@@ -9,26 +9,8 @@ spring:
     password: userCoffee
   liquibase:
     change-log: classpath:/config/liquibase/master.xml
-  mail:
-<<<<<<< HEAD
-    host: smtp_gmail.com
-    port: 587
-    username: matheus1995@gmail.com
-    password:
-      properties:
-        email:
-          smtp:
-            auth: true
-            starttls:
-              enable: true
-              required: true
-            quitwait: false
 
-  aplication:
-    email:
-      endereco-remetente: mhateus1995@gmail.com
-      nome-remetente:
-=======
+  mail:
     host: smtp.gmail.com
     port: 587
     username: grupo5@gmail.com
@@ -46,4 +28,3 @@ application:
   email:
     endereco-remetente:
     nome-remetente: CoffeeTime
->>>>>>> 9e3cd96a01ffec9bd1a957b4a353b0a5b11953e3
