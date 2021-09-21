@@ -23,7 +23,7 @@ public class EmailServico {
     @SneakyThrows
     public void sendEmail(EmailDTO emailDTO) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
-        MimeMessageHelper mime =  new MimeMessageHelper(MimeMessage, multipart: false, )
+        MimeMessageHelper mime =  new MimeMessageHelper(MimeMessage, multipart: false );
 
         mime.setTo(emailDTO.getDestinatario());
         mime.setFrom(applicationProperties.getEnderecoRemetente());

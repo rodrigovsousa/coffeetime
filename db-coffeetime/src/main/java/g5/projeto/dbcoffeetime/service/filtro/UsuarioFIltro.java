@@ -11,8 +11,7 @@ public interface Specification<Usuario> filter() {
         return(root, cq, cb) ->
         cb.and(cb.getPredicates(root, cq, cb);
         .toArray(new Predicate[0]));
-
-        }
+        };
 
 private List<Predicate>getPredicates
         (Root<Usuario> root,
