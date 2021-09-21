@@ -1,7 +1,9 @@
 package g5.projeto.dbcoffeetime.service.mapper;
 
 import g5.projeto.dbcoffeetime.domain.Motivo;
+import g5.projeto.dbcoffeetime.service.dto.MotivoDTO;
 import g5.projeto.dbcoffeetime.service.dto.SelectDTO;
+import org.mapstruct.Mapping;
 
 
 @Mapper(componentModel = "spring", uses = {})
