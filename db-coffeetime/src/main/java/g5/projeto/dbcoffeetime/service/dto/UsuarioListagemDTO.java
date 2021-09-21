@@ -31,3 +31,4 @@ public class UsuarioListagemDTO implements Serializable {
     @NotBlank
     private boolean status;
 }
+

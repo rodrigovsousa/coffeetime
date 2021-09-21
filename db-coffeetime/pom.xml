@@ -68,6 +68,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+<<<<<<< HEAD
+	</dependencies>
+=======
 		<dependency>
 			<groupId>org.xmlunit</groupId>
 			<artifactId>xmlunit-core</artifactId>
@@ -79,6 +82,8 @@
         </dependency>
     </dependencies>
 
+
+>>>>>>> 9e3cd96a01ffec9bd1a957b4a353b0a5b11953e3
 
 
 	<build>
