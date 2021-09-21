@@ -9,3 +9,21 @@ spring:
     password: userCoffee
   liquibase:
     change-log: classpath:/config/liquibase/master.xml
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: grupo5@gmail.com
+    password: "102030"
+    properties:
+      mail:
+        stmp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          quitwait: false
+application:
+  email:
+    endereco-remetente: grupo5@gmail.com
+    nome-remetente: db-coffeetime
+
