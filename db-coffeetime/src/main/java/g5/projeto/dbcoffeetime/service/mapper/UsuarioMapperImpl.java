@@ -25,14 +25,9 @@ public class UsuarioMapperImpl implements UsuarioMapper{
         usuario.setDataDeNascimento( dto.getDataDeNascimento() );
         usuario.setStatus( dto.isStatus() );
         usuario.setTelefone( dto.getTelefone() );
-<<<<<<< HEAD
         UsuarioMapperImpl cargoMapper;
         //usuario.setCargo( cargoMapper.toEntity(dto.getCargo() ) );
-=======
         usuario.setCargo( CargoMapper.toEntity(dto.getCargo() ) );
->>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
-
-
 
         return usuario;
     }
