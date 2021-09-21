@@ -21,7 +21,7 @@ public class EmailServico {
 
     private final JavaMailSender javaMailSender;
 
-    private final ApplicationPropertier;
+    private final ApplicationPropertier applicationProperties;
 
     @SneakyThrows
     public  void sedEmail(EmailDTO emailDTO){

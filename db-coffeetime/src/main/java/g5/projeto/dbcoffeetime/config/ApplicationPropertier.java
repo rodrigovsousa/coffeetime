@@ -9,7 +9,11 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 @Getter
 @Configuration
-@ConfigurationProperties()
+@ConfigurationProperties(prefix =  "aplication")
 public class ApplicationPropertier {
+
+    private String enderecoRemetente;
+    private  String nomeRemetente;
+
 
 }

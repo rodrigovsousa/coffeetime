@@ -1,4 +1,4 @@
-package g5.projeto.dbcoffeetime.service.mapper;
+package g5.projeto.dbcoffeetime.service;
 
 import g5.projeto.dbcoffeetime.service.EmailServico;
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
@@ -9,6 +9,10 @@ public class EventoServico {
 
     private final EmailServico emailServico;
 
+    public EventoServico(EmailServico emailServico) {
+        this.emailServico = emailServico;
+    }
+
 
     @Scheduled(cron = "* * * * * *")
     public  void rotinaDeEmail(){
@@ -17,7 +21,7 @@ public class EventoServico {
         emailDTO.setDestinatario("nathan.rocha@basis.com");
         emailDTO.setAssunto("sexta do salgado");
         emailDTO.setCorpo(""+"");
-        emailDTO.setCopias().add("");
+        emailDTO.getCopias().add("");
 
         emailServico.sedEmail(emailDTO);
 
