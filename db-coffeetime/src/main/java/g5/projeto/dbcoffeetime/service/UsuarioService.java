@@ -13,7 +13,6 @@ import java.util.List;
 public class UsuarioService {
 
     private final UsuarioRepositorio usuarioRepositorio;
-
     private final UsuarioMapper usuarioMapper;
 
     public UsuarioService(UsuarioMapper usuarioMapper, UsuarioRepositorio usuarioRepositorio){
@@ -40,13 +39,6 @@ public class UsuarioService {
     public void deletar(Long id) {
          usuarioRepositorio.deleteById(id);
     }
-
-    public String buscarFoto (Long idUsuario){
-
-      Usuario usuario =  usuarioRepositorio.findById(idUsuario).get();
-      return usuario.getFoto();
-    }
-
 
     public UsuarioMapper getUsuarioMapper() {
         return usuarioMapper;

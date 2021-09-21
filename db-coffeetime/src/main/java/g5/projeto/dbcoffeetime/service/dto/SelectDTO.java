@@ -10,17 +10,11 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class SelectDTO {
 
-    @NotNull
     private Long value;
 
-    @NotNull
     private String nome;
 
-    @NotNull
-    @NotBlank
     private SelectDTO cargo;
 
-    @NotNull
-    @NotBlank
     private boolean status;
 }

@@ -1,36 +1,43 @@
 package g5.projeto.dbcoffeetime.service.dto;
 
+import g5.projeto.dbcoffeetime.domain.Situacao;
+import g5.projeto.dbcoffeetime.domain.Usuario;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
-public class EventoDTO {
+@AllArgsConstructor
+@NoArgsConstructor
+public class EventoDTO implements Serializable {
 
-    @NotNull
     private Long id;
 
     @NotNull
-    @NotBlank
     private LocalDate data;
 
     @NotNull
-    @NotBlank
+    @Size(max = 200)
     private String justificativaAdiamento;
 
     @NotNull
-    @NotBlank
     private Double valor;
 
     @NotNull
-    @NotBlank
+    private Situacao situacao;
+
+    @NotNull
     private String patrocinador;
-<<<<<<< HEAD
+
+    @NotBlank
+    private List<Usuario> usuario;
 }
-=======
-}
->>>>>>> 9e3cd96a01ffec9bd1a957b4a353b0a5b11953e3

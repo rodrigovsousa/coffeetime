@@ -21,8 +21,6 @@
                 <column name="CARGO_ID" type="INT" remarks="chave estrangeira de cargo">
                     <constraints nullable="false"/>
                 </column>
-                <column name="FOTO" type="BLOB" remarks="foto do usuario">
-                </column>
                 <column name="EMAIL" type="VARCHAR(40)" remarks="email do usuario">
                     <constraints nullable="false" unique="true"/>
                 </column>
