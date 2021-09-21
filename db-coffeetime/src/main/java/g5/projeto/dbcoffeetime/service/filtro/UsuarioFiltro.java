@@ -24,7 +24,7 @@ public class UsuarioFiltro implements EntityFiltro<Usuario> {
 
     @Override
     public Specification<Usuario> filter() {
-        return (root, cq, cb) -> cb.and(getPredicates(root, cq, cb)).toArray(new Predicate()[0]);
+        return (root, cq, cb) -> cb.and(getPredicates(root, cq, cb).toArray(new Predicate()[0]));
     }
 
 }
