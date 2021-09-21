@@ -38,5 +38,4 @@ public class EmailServico {
 
         javaMailSender.send(mimeMessage);
     }
-
 }
