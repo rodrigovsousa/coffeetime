@@ -2,6 +2,7 @@ package g5.projeto.dbcoffeetime.service;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.repositorio.UsuarioRepositorio;
+import g5.projeto.dbcoffeetime.service.mapper.UsuarioMapper;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -11,11 +12,14 @@ import java.util.List;
 @Transactional
 public class UsuarioService {
 
-    public UsuarioService(UsuarioRepositorio usuarioRepositorio){
+    private final UsuarioRepositorio usuarioRepositorio;
+
+    private final UsuarioMapper usuarioMapper;
+
+    public UsuarioService(UsuarioMapper usuarioMapper, UsuarioRepositorio usuarioRepositorio){
+        this.usuarioMapper = usuarioMapper;
         this.usuarioRepositorio = usuarioRepositorio;
     }
-
-    private final UsuarioRepositorio usuarioRepositorio;
 
     public Usuario buscar(Long id) {
         return usuarioRepositorio.findById(id).orElse(null);
@@ -44,4 +48,7 @@ public class UsuarioService {
     }
 
 
+    public UsuarioMapper getUsuarioMapper() {
+        return usuarioMapper;
+    }
 }

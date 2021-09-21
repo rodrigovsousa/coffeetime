@@ -10,6 +10,7 @@ spring:
   liquibase:
     change-log: classpath:/config/liquibase/master.xml
   mail:
+<<<<<<< HEAD
     host: smtp_gmail.com
     port: 587
     username: matheus1995@gmail.com
@@ -27,3 +28,22 @@ spring:
     email:
       endereco-remetente: mhateus1995@gmail.com
       nome-remetente:
+=======
+    host: smtp.gmail.com
+    port: 587
+    username: grupo5@gmail.com
+    password: "102030"
+    properties:
+      mail:
+        stmp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          quitwait: false
+
+application:
+  email:
+    endereco-remetente:
+    nome-remetente: CoffeeTime
+>>>>>>> 9e3cd96a01ffec9bd1a957b4a353b0a5b11953e3
