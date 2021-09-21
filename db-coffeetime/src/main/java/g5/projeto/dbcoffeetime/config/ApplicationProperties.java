@@ -8,5 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationProperties {
 
     private String enderecoRemetente;
-    private String nomeRemetente
+    private String nomeRemetente;
+
 }

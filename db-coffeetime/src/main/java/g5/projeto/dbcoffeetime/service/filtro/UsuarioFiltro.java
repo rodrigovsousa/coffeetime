@@ -27,4 +27,6 @@ public class UsuarioFiltro implements EntityFiltro<Usuario> {
         return (root, cq, cb) -> cb.and(getPredicates(root, cq, cb)).toArray(new Predicate()[0]);
     }
 
+
+
 }

@@ -16,7 +16,7 @@ import javax.transaction.Transactional;
 @RequiredArgsConstructor
 public class EmailServico {
 
-    private final JavaMailSender JavaMailSender;
+    private final JavaMailSender javaMailSender;
 
     private final ApplicationProperties applicationProperties;
 
@@ -29,6 +29,14 @@ public class EmailServico {
         mime.setTo(emailDTO.getDestinatario());
         mime.setFrom(applicationProperties.getEnderecoRemetente());
         mime.setSubject(emailDTO.getAssunto());
+
+        for(String s: emailDTO.getCopias()){
+            mime.addCc(s);
+        }
+
+        mime.setText("Aqui vamos colocar quem vai patrocinar, temos que setar o patrocinador");
+
+        javaMailSender.send(mimeMessage);
     }
 
 }

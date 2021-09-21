@@ -22,5 +22,5 @@ public class EmailDTO {
     @NotNull
     private String corpo;
 
-    private List<String> copias new = ArrayList<>();
+    private List<String> copias = new ArrayList<>();
 }
