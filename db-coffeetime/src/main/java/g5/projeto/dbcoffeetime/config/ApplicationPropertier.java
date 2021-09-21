@@ -16,4 +16,6 @@ public class ApplicationPropertier {
     private  String nomeRemetente;
 
 
+    public String getEndecoRemetente() {
+    }
 }

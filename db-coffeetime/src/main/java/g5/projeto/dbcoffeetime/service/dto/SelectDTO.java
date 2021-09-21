@@ -23,4 +23,4 @@ public class SelectDTO {
     @NotNull
     @NotBlank
     private boolean status;
-}
+};

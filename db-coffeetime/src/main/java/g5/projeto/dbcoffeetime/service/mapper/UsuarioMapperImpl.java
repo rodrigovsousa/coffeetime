@@ -23,7 +23,8 @@ public class UsuarioMapperImpl implements UsuarioMapper{
         usuario.setDataDeNascimento( dto.getDataDeNascimento() );
         usuario.setStatus( dto.isStatus() );
         usuario.setTelefone( dto.getTelefone() );
-        usuario.setCargo( cargoMapper.toEntity(dto.getCargo() ) );
+        UsuarioMapperImpl cargoMapper;
+        //usuario.setCargo( cargoMapper.toEntity(dto.getCargo() ) );
 
 
 

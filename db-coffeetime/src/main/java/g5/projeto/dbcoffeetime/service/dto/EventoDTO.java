@@ -3,10 +3,15 @@ package g5.projeto.dbcoffeetime.service.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+@Table(indexes = {
+        @Index(name = "idx_eventodto_patrocinador", columnList = "patrocinador")
+})
 @Getter
 @Setter
 public class EventoDTO {
@@ -29,8 +34,3 @@ public class EventoDTO {
     @NotNull
     @NotBlank
     private String patrocinador;
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 9e3cd96a01ffec9bd1a957b4a353b0a5b11953e3
