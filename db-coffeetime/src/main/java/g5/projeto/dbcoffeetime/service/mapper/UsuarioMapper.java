@@ -8,4 +8,4 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring", uses = Cargo.class)
 public interface UsuarioMapper extends EntityMapper <UsuarioDTO, Usuario>{
 
-};
+}

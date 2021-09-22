@@ -44,6 +44,6 @@ public class EventoDTO implements Serializable {
     private String patrocinador;
 
     @NotBlank
-    private List<Usuario> usuario;
+    private List<UsuarioDTO> usuario;
 }
 

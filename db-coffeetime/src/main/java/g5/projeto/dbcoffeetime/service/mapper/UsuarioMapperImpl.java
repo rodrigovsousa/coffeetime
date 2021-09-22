@@ -4,6 +4,7 @@ import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -50,17 +51,26 @@ public class UsuarioMapperImpl implements UsuarioMapper{
         usuarioDTO.setCargo(cargoMapper.toDto(entity.getCargo()));
         usuarioDTO.setStatus(entity.getStatus());
         usuarioDTO.setTelefone(entity.getTelefone());
+        usuarioDTO.setCpf(entity.getCpf());
 
         return usuarioDTO;
     }
 
     @Override
     public List<Usuario> toEntity(List<UsuarioDTO> dtos) {
-        return null;
+        List<Usuario> usuarios = new ArrayList<>();
+        for (UsuarioDTO usuario : dtos ){
+            usuarios.add(toEntity(usuario));
+        }
+        return usuarios;
     }
 
     @Override
     public List<UsuarioDTO> toDto(List<Usuario> entitys) {
-        return null;
+        List<UsuarioDTO> usuarios = new ArrayList<>();
+        for (Usuario usuario : entitys){
+            usuarios.add(toDto(usuario));
+        }
+        return usuarios;
     }
 }

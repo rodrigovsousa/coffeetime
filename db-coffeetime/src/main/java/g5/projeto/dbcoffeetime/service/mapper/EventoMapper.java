@@ -2,21 +2,18 @@ package g5.projeto.dbcoffeetime.service.mapper;
 
 import g5.projeto.dbcoffeetime.domain.Evento;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
-import org.mapstruct.InheritInverseConfiguration;
+import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 
-@Mapper(componentModel = "spring", uses = {})
+
+@Mapper(componentModel = "spring", uses = {UsuarioDTO.class})
 public interface EventoMapper extends EntityMapper<EventoDTO, Evento> {
 
     @Override
-    @Mapping(source = "id", target = "value");
-
-    EventoDTO toDto(Evento Evento);
+    EventoDTO toDto(Evento evento);
 
     @Override
-    @InheritInverseConfiguration
     Evento toEntity(EventoDTO dto);
 
 }

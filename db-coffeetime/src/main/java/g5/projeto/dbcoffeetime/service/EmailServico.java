@@ -23,7 +23,7 @@ public class EmailServico {
     private String remetente;
 
     @SneakyThrows
-    public void sedEmail(EmailDTO emailDTO) {
+    public void enviarEmail(EmailDTO emailDTO) {
 
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 

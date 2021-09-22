@@ -10,4 +10,4 @@ public class SelectDTO {
     private Long value;
 
     private String nome;
-};
+}

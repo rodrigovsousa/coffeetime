@@ -1,10 +1,8 @@
 package g5.projeto.dbcoffeetime.service.mapper;
 
 import g5.projeto.dbcoffeetime.domain.Cargo;
-import g5.projeto.dbcoffeetime.service.dto.CargoDTO;
 import g5.projeto.dbcoffeetime.service.dto.SelectDTO;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 

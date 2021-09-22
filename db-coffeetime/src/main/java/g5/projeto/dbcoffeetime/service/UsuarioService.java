@@ -16,6 +16,7 @@ public class UsuarioService {
     private final UsuarioRepositorio usuarioRepositorio;
     private final UsuarioMapper usuarioMapper;
 
+
     public UsuarioService(UsuarioMapper usuarioMapper, UsuarioRepositorio usuarioRepositorio){
         this.usuarioMapper = usuarioMapper;
         this.usuarioRepositorio = usuarioRepositorio;

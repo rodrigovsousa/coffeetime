@@ -12,11 +12,17 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: grupo5@gmail.com
-    password: "102030"
+    username: grupo5coffee@gmail.com
+    password: "grupo5senha"
     properties:
       mail:
         stmp:
+          ssl:
+            enabled: true
+          socketFactory:
+            port: 587
+            fallback: false
+            class: javax.net.ssl.SSLSocketFactory
           auth: true
           starttls:
             enable: true

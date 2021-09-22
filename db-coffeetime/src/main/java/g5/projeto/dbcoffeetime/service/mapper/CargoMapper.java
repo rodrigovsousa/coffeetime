@@ -12,7 +12,7 @@ import org.mapstruct.Mapping;
 public interface CargoMapper extends EntityMapper<SelectDTO, Cargo> {
 
     @Mapping(source = "id", target = "value")
-    @Mapping(source = "nome", target = "label")
+    @Mapping(source = "nome", target = "nome")
     SelectDTO toDto(Cargo cargo);
 
     @InheritInverseConfiguration

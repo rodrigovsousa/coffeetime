@@ -22,7 +22,7 @@ public class EventoServico {
         emailDTO.setCorpo(""+"");
         emailDTO.getCopias().add("");
 
-        emailServico.sedEmail(emailDTO);
+        emailServico.enviarEmail(emailDTO);
 
 
     }
