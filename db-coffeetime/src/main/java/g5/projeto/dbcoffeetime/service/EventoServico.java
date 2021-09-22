@@ -8,9 +8,6 @@ public class EventoServico {
 
     private final EmailServico emailServico;
 
-    public EventoServico(EmailServico emailServico) {
-        this.emailServico = emailServico;
-    }
 
 
     @Scheduled(cron = "* * * * * *")
@@ -23,7 +20,6 @@ public class EventoServico {
         emailDTO.getCopias().add("");
 
         emailServico.enviarEmail(emailDTO);
-
 
     }
 

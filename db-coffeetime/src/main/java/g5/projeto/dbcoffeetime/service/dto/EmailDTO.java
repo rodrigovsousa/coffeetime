@@ -16,7 +16,6 @@ public class EmailDTO {
     private String assunto;
 
     @NotNull
-    @NotBlank
     private String destinatario;
 
     @NotNull
