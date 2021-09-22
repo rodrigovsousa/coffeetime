@@ -2,6 +2,8 @@ package g5.projeto.dbcoffeetime.service;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.repositorio.UsuarioRepositorio;
+import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
+import g5.projeto.dbcoffeetime.service.mapper.UsuarioMapper;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -27,11 +29,13 @@ public class UsuarioService {
         return usuarioRepositorio.findAll();
     }
 
-    public Usuario salvar(Usuario usuario) {
-        return usuarioRepositorio.save(usuario);
-    }
+    public UsuarioDTO salvar(UsuarioDTO usuarioDTO) {
+        Usuario usuario = usuarioMapper.toEntity(usuarioDTO);
+         Usuario usuarioSalvo = usuarioRepositorio.save(usuario);
+         return usuarioMapper.toDto(usuarioSalvo);
 
-    public Usuario editar(Usuario usuario) {
+
+    public UsuarioDTO editar(UsuarioDTO usuarioDTO) {
         return usuarioRepositorio.save(usuario);
     }
 

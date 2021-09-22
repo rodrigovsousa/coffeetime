@@ -2,6 +2,7 @@ package g5.projeto.dbcoffeetime.web.rest;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.service.UsuarioService;
+import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,14 +34,14 @@ public class UsuarioRecurso {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity cadastrar(@RequestBody Usuario usuario) throws URISyntaxException {
-        Usuario usuarioCriado = usuarioService.salvar(usuario);
-        return ResponseEntity.created(new URI("/api/usuarios/"+usuarioCriado.getId())).build();
+    public ResponseEntity<UsuarioDTO> cadastrar(@RequestBody UsuarioDTO usuarioDTO) throws URISyntaxException {
+        usuarioService.salvar(usuarioDTO);
+        return ResponseEntity.created(new URI("/api/usuarios/"+usuarioDTO.getId())).build();
     }
 
     @PutMapping
-    public ResponseEntity<Usuario> editar(@RequestBody Usuario usuario) {
-        Usuario usuarioEditado = usuarioService.editar(usuario);
+    public ResponseEntity<UsuarioDTO> editar(@RequestBody UsuarioDTO usuarioDTO) {
+        Usuario usuarioEditado = usuarioService.editar(usuarioDTO);
         return  ResponseEntity.ok(usuarioEditado);
     }
 
