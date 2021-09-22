@@ -1,6 +1,7 @@
 package g5.projeto.dbcoffeetime.service.filtro;
 
 import g5.projeto.dbcoffeetime.domain.Cargo;
+import g5.projeto.dbcoffeetime.domain.Cargo_;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -30,7 +31,7 @@ public class CargoFiltro implements EntityFiltro {
         }
 
         if(descricao != null){
-            predicates.add(cb.like(root.get(Cargo_.nome), "%" + descricao + "%"));
+            predicates.add(cb.like(root.get(Cargo_.descricao), "%" + descricao + "%"));
         }
 
         return predicates;

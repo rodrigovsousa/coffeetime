@@ -8,6 +8,9 @@ public class EventoServico {
 
     private final EmailServico emailServico;
 
+    public EventoServico(EmailServico emailServico) {
+        this.emailServico = emailServico;
+    }
 
 
     @Scheduled(cron = "* * * * * *")
