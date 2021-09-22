@@ -10,8 +10,4 @@ public class SelectDTO {
     private Long value;
 
     private String nome;
-
-    private SelectDTO cargo;
-
-    private boolean status;
 };

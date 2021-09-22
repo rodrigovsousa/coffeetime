@@ -22,14 +22,14 @@ public class UsuarioRecurso {
     private final UsuarioService usuarioService;
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> buscarTodos() {
-        List<Usuario> usuarios = usuarioService.buscarTodos();
+    public ResponseEntity<List<UsuarioDTO>> buscarTodos() {
+        List<UsuarioDTO> usuarios = usuarioService.buscarTodos();
         return ResponseEntity.ok(usuarios);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario>buscarPorId(@PathVariable Long id) {
-        Usuario usuario = usuarioService.buscar(id);
+    public ResponseEntity<UsuarioDTO>buscarPorId(@PathVariable Long id) {
+        UsuarioDTO usuario = usuarioService.buscar(id);
         return ResponseEntity.ok(usuario);
     }
 
@@ -41,7 +41,7 @@ public class UsuarioRecurso {
 
     @PutMapping
     public ResponseEntity<UsuarioDTO> editar(@RequestBody UsuarioDTO usuarioDTO) {
-        Usuario usuarioEditado = usuarioService.editar(usuarioDTO);
+        UsuarioDTO usuarioEditado = usuarioService.editar(usuarioDTO);
         return  ResponseEntity.ok(usuarioEditado);
     }
 

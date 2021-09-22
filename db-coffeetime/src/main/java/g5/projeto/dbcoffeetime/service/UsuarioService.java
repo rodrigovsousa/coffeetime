@@ -21,22 +21,27 @@ public class UsuarioService {
         this.usuarioRepositorio = usuarioRepositorio;
     }
 
-    public Usuario buscar(Long id) {
-        return usuarioRepositorio.findById(id).orElse(null);
+    public UsuarioDTO buscar(Long id) {
+        Usuario usuario = usuarioRepositorio.findById(id).orElse(null);
+        return usuarioMapper.toDto(usuario);
     }
 
-    public List<Usuario> buscarTodos() {
-        return usuarioRepositorio.findAll();
+    public List<UsuarioDTO> buscarTodos() {
+        List<Usuario> usuarios = usuarioRepositorio.findAll();
+        return usuarioMapper.toDto(usuarios);
     }
 
     public UsuarioDTO salvar(UsuarioDTO usuarioDTO) {
         Usuario usuario = usuarioMapper.toEntity(usuarioDTO);
-         Usuario usuarioSalvo = usuarioRepositorio.save(usuario);
-         return usuarioMapper.toDto(usuarioSalvo);
+        Usuario usuarioSalvo = usuarioRepositorio.save(usuario);
+        return usuarioMapper.toDto(usuarioSalvo);
+    }
 
 
-    public UsuarioDTO editar(UsuarioDTO usuarioDTO) {
-        return usuarioRepositorio.save(usuario);
+    public UsuarioDTO editar (UsuarioDTO usuarioDTO) {
+        Usuario usuario = usuarioMapper.toEntity(usuarioDTO);
+        Usuario usuarioSalvo = usuarioRepositorio.save(usuario);
+        return usuarioMapper.toDto(usuarioSalvo);
     }
 
     public void deletar(Long id) {

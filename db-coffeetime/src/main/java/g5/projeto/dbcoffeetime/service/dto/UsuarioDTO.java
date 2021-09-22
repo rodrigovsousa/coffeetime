@@ -39,6 +39,7 @@ public class UsuarioDTO {
     @Size(min = 11, max = 15)
     private String telefone;
 
-    @NotBlank
-    private List<Evento> evento;
+    @NotNull
+    private SelectDTO cargo;
+
 }

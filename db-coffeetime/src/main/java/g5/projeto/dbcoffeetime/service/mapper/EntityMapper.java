@@ -9,5 +9,7 @@ public interface EntityMapper <D, E>{
     D toDto(E entity);
 
     List<E> toEntity (List<D> dtos);
+
+    List<D> toDto(List<E> entitys);
 }
 
