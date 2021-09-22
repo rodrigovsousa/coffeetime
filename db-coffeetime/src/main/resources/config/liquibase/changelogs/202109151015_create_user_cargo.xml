@@ -5,11 +5,11 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <changeSet id ="202109151425" author="rodrigo">
-        <createTable tableName="CARGO">
+        <createTable tableName="cargo">
             <column name="ID" type="INT" autoIncrement="true" remarks="IDENTIFICADOR TABELA USUÁRIO">
                 <constraints primaryKey="true"/>
         </column>
-            <column name="NOME" type="VARCHAR(20)" autoIncrement="true" remarks="NOME DO CARGO">
+            <column name="DESCRICAO" type="VARCHAR(20)" remarks="NOME DO CARGO">
                 <constraints nullable="true"/>
             </column>
         </createTable>

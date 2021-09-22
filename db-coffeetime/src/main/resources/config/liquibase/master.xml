@@ -4,22 +4,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
-<<<<<<< HEAD
-    <include file="config/liquibase/changelogs/202109161017_create_user_usuarioevento.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelogs/202109161006_create_user_evento.xml" relativeToChangelogFile="false"/>
 
-</databaseChangeLog>
-=======
-<<<<<<< HEAD
-    <include file="config/liquibase/changelogs/202109152021_create_user_table.xml" relativeToChangelogFile="false"/>
-
-</databaseChangeLog>
-
-=======
     <include file="config/liquibase/changelogs/202109151015_create_user_cargo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelogs/202109151014_create_user_situacao.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelogs/202109151013_insert_in_cargo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelogs/202109151012_create_user_motivo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelogs/202109161006_create_user_evento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelogs/202109152021_create_user_usuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelogs/202109161017_create_user_usuarioevento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelogs/202109151013_insert_in_cargo.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>
->>>>>>> 283afe10057d75bbab801d6b1a90fb79158444bf
->>>>>>> 4eada3ca7c11ae980a54e2a033085801d499378a

@@ -1,0 +1,7 @@
+version: '2'
+services:
+  COFFEETIME:
+    extends:
+      file: containers/postgres/postgres.yml
+      service: COFFEETIME
+    container_name: COFFEETIME
