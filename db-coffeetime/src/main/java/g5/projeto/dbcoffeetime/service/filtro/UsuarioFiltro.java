@@ -1,30 +1,43 @@
 package g5.projeto.dbcoffeetime.service.filtro;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.jpa.domain.Specification;
 
-import java.time.LocalDate;
-import java.util.function.Predicate;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.criteria.Predicate;
 
-@Getter
-@Setter
-public class UsuarioFiltro implements EntityFiltro<Usuario> {
+public class UsuarioFiltro implements EntityFiltro{
 
     private Long id;
     private String nome;
-    private String cpf;
     private String email;
-    private String foto;
-    private LocalDate dataDeNascimento;
-    private boolean status;
-    private String telefone;
-
 
     @Override
     public Specification<Usuario> filter() {
         return (root, cq, cb) -> cb.and(getPredicates(root, cq, cb).toArray(new Predicate()[0]));
+    }
+
+    private List<Predicate> getPredicates(Root<Usuario> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
+
+        List<Predicate> predicates = new ArrayList<>();
+
+        cq.orderBy(cb.desc(root.get("id")));
+
+        if (id != null) {
+            predicates.add(cb.equal(root.get(Usuario_.id), id));
+        }
+        if (nome != null) {
+            predicates.add(cb.like(root.get(Usuario_.nome),"%" + nome + "%"));
+        }
+        if (email != null) {
+            predicates.add(cb.like(root.get(Usuario_.email), "%" + email + "%"));
+        }
+
+        return predicates;
     }
 
 }

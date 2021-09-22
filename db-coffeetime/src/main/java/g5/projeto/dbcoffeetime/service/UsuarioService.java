@@ -2,7 +2,6 @@ package g5.projeto.dbcoffeetime.service;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.repositorio.UsuarioRepositorio;
-import g5.projeto.dbcoffeetime.service.mapper.UsuarioMapper;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
