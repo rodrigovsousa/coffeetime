@@ -12,18 +12,24 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: grupo5@gmail.com
-    password: "102030"
+    username: grupo5coffee@gmail.com
+    password: "grupo5senha"
     properties:
       mail:
         stmp:
+          ssl:
+            enabled: true
+          socketFactory:
+            port: 587
+            fallback: false
+            class: javax.net.ssl.SSLSocketFactory
           auth: true
           starttls:
             enable: true
             required: true
           quitwait: false
+
 application:
   email:
-    endereco-remetente: grupo5@gmail.com
-    nome-remetente: db-coffeetime
-
+    endereco-remetente:
+    nome-remetente: CoffeeTime
