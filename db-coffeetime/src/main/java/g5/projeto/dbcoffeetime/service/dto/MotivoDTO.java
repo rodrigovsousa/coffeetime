@@ -19,11 +19,7 @@ public class MotivoDTO implements Serializable {
 
     @NotNull
     private String titulo;
-<<<<<<< HEAD
 
-}
 
-=======
->>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
 }
 

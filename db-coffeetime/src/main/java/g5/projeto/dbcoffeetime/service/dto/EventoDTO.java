@@ -37,17 +37,13 @@ public class EventoDTO implements Serializable {
     @NotNull
     private Double valor;
 
-    @NotNull
-<<<<<<< HEAD
-    @NotBlank
-    private String patrocinador;
-=======
+
     private Situacao situacao;
 
     @NotNull
     private String patrocinador;
 
     @NotBlank
-    private List<Usuario> usuario;
+    private List<UsuarioDTO> usuario;
 }
->>>>>>> 173069d0474de1c5e0952a1394f450f6193bc1d5
+
