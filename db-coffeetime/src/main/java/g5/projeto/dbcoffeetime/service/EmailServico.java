@@ -1,5 +1,6 @@
 package g5.projeto.dbcoffeetime.service;
 
+import g5.projeto.dbcoffeetime.config.ApplicationProperties;
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -18,9 +19,8 @@ import javax.transaction.Transactional;
 public class EmailServico {
 
     private final JavaMailSender javaMailSender;
+    private final ApplicationProperties applicationProperties;
 
-    @Value( "${spring.mail.username}" )
-    private String remetente;
 
     @SneakyThrows
     public void enviarEmail(EmailDTO emailDTO) {
@@ -30,14 +30,14 @@ public class EmailServico {
         MimeMessageHelper mime = new MimeMessageHelper(mimeMessage, false);
 
         mime.setTo(emailDTO.getDestinatario());
-        mime.setFrom(remetente);
+        mime.setFrom(applicationProperties.getEnderecoRemetente());
         mime.setSubject((emailDTO.getAssunto()));
 
         for (String s : emailDTO.getCopias()) {
             mime.addCc(s);
         }
 
-        mime.setText("hoje teremos salgado patrocinado por" + "nathan");
+        mime.setText("hoje teremos salgado patrocinado por" + "{id}");
 
         javaMailSender.send(mimeMessage);
 
