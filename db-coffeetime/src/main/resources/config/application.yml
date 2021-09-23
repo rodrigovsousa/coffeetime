@@ -13,7 +13,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: grupo5coffee@gmail.com
-    password: "grupo5senha"
+    password: grupo5senha
     properties:
       mail:
         stmp:
@@ -31,5 +31,5 @@ spring:
 
 application:
   email:
-    endereco-remetente:
+    endereco-remetente: grupo5coffee@gmail.com
     nome-remetente: CoffeeTime
