@@ -16,18 +16,11 @@ spring:
     password: grupo5senha
     properties:
       mail:
-        stmp:
-          ssl:
-            enabled: true
-          socketFactory:
-            port: 587
-            fallback: false
-            class: javax.net.ssl.SSLSocketFactory
-          auth: true
+        smtp:
           starttls:
             enable: true
-            required: true
-          quitwait: false
+          auth: true
+
 
 application:
   email:

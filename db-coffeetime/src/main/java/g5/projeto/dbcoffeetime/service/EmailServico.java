@@ -4,7 +4,6 @@ import g5.projeto.dbcoffeetime.config.ApplicationProperties;
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -27,11 +26,11 @@ public class EmailServico {
 
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 
-        MimeMessageHelper mime = new MimeMessageHelper(mimeMessage, false);
+        MimeMessageHelper mime = new MimeMessageHelper(mimeMessage);
 
         mime.setTo(emailDTO.getDestinatario());
         mime.setFrom(applicationProperties.getEnderecoRemetente());
-        mime.setSubject((emailDTO.getAssunto()));
+        mime.setSubject(emailDTO.getAssunto());
 
         for (String s : emailDTO.getCopias()) {
             mime.addCc(s);
