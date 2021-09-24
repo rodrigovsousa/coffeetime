@@ -15,10 +15,10 @@ import java.io.Serializable;
 public class UsuarioEventoId implements Serializable {
 
 
-    @Column (name = "IDEVENTO", nullable = false)
+    @Column (name = "EVENTOID", nullable = false)
     private Long idEvento;
 
-    @Column (name = "IDUSUARIO", nullable = false)
+    @Column (name = "USUARIOID", nullable = false)
     private Long idUsuario;
 
     public UsuarioEventoId (Long idEvento, Long idUsuario){

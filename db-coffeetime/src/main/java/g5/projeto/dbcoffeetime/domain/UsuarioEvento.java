@@ -17,13 +17,13 @@ public class UsuarioEvento implements Serializable {
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn (name = "USUARIOID", referencedColumnName = "id")
+            @JoinColumn (name = "USUARIOID", referencedColumnName = "id", insertable = false, updatable = false)
     })
     private Usuario usuario;
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn (name = "EVENTOID", referencedColumnName = "id")
+            @JoinColumn (name = "EVENTOID", referencedColumnName = "id", insertable = false, updatable = false)
     })
     private Evento evento;
 

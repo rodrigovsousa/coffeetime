@@ -34,6 +34,7 @@ public class Evento implements Serializable {
     private Motivo motivo;
 
     @ManyToOne
+    @JoinColumn(name = "SITUACAO")
     private Situacao situacao;
 
 }

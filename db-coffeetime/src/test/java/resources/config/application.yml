@@ -1,28 +1,33 @@
 spring:
   application:
     name: db-coffeetime
-
+  profiles:
+    active: test
+  h2:
+    console:
+      enabled: true
+      path: /h2
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:h2:mem:sgp
     username: userCoffee
     password: userCoffee
+    driverClassName: org.h2.Driver
   liquibase:
     change-log: classpath:/config/liquibase/master.xml
   mail:
     host: smtp.gmail.com
-    port: 587
+    port: 465
     username: grupo5coffee@gmail.com
     password: grupo5senha
     properties:
       mail:
         smtp:
+          socketFactory:
+            port: 465
+            fallback: false
+            class: javax.net.ssl.SSLSocketFactory
+          auth: true
           starttls:
             enable: true
-          auth: true
-
-
-application:
-  email:
-    endereco-remetente: grupo5coffee@gmail.com
-    nome-remetente: CoffeeTime
+            required: true
+          quitwait: false
