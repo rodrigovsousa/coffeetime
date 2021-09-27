@@ -27,6 +27,11 @@ public class UsuarioRecurso {
         return ResponseEntity.ok(usuarios);
     }
 
+    @PostMapping("/email")
+    public void enviarEmail (){
+        usuarioService.enviarEmail();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioDTO>buscarPorId(@PathVariable Long id) {
         UsuarioDTO usuario = usuarioService.buscar(id);
