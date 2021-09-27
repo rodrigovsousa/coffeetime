@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: db-coffeetime
+  profiles:
+    active: test
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:mem:sgp
+    username: userCoffee
+    password: userCoffee
+    driverClassName: org.h2.Driver
+  liquibase:
+    change-log: classpath:/config/liquibase/master.xml
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: grupo5coffee@gmail.com
+    password: grupo5senha
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            port: 465
+            fallback: false
+            class: javax.net.ssl.SSLSocketFactory
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          quitwait: false
