@@ -1,5 +1,5 @@
-import Usuario from "./Usuario"
-import Situacao from "./Situacao"
+import Usuario from "./Usuario";
+import Situacao from "./Situacao";
 
 export default interface Evento {
     id: string;

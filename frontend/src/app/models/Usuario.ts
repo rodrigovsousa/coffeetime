@@ -1,4 +1,4 @@
-import Cargo from "./Cargo"
+import Cargo from "./Cargo";
 
 export default interface Usuario {
     id: string;
@@ -9,5 +9,4 @@ export default interface Usuario {
     status: boolean;
     telefone: string;
     cargo: Cargo;
-
 }
