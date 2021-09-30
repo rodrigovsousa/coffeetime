@@ -1,7 +1,6 @@
 package g5.projeto.dbcoffeetime.service.dto;
 
 import g5.projeto.dbcoffeetime.domain.Situacao;
-import g5.projeto.dbcoffeetime.domain.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

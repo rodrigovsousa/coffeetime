@@ -48,7 +48,6 @@ public class UsuarioService {
         return usuarioMapper.toDto(usuarioSalvo);
     }
 
-
     public void enviarEmail () {
         EmailDTO emailDTO = new EmailDTO();
         emailDTO.setDestinatario("mhateus1995@gmail.com");
