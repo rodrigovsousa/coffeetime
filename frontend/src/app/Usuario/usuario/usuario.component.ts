@@ -5,15 +5,18 @@ import { Usuario } from 'src/app/usuario/usuario';
 @Component({
     templateUrl: './tablecoltoggledemo.html'
 })
-export class TableColToggleDemo implements OnInit {
-
+export class UsuarioComponent implements OnInit {
+    
     usuarios: Usuario[];
+    usuario: Usuario;
 
     cols: any[];
 
     _selectedColumns: any[];
 
-    constructor() { }
+    usuarioForm;
+
+    constructor() {}
 
     ngOnInit() {
         this.usuarios(data => this.usuarios = data);
