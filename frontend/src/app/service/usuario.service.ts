@@ -1,4 +1,3 @@
-
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
@@ -7,8 +6,8 @@ import Usuario from "../../models/Usuario";
 @Injectable({
     providedIn: "root",
 })
-export class Usuarioervice {
-    private readonly PATH = environment.apiUrl + "/usuario/";
+export class UsuarioService {
+    baseUrl = "http://localhost:4200/usuario"
 
     constructor(private http: HttpClient) {}
 
