@@ -3,3 +3,8 @@ export class FuncoesUtil {
         return 'Hello World';
     }
 }
+
+
+
+let ArrayList = new Array[''];
+Array.length
