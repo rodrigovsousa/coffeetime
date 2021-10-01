@@ -14,7 +14,7 @@ import { ErrorModule, SecurityModule, VersionTagModule } from '@nuvem/angular-ba
 import { DiarioErrosComponent } from './components/diario-erros/diario-erros.component';
 import { BlockUIModule } from 'ng-block-ui';
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
-
+import {TableModule} from 'primeng/table';
 
 @NgModule({
     declarations: [
@@ -40,7 +40,8 @@ import { EventoComponent } from './modulo-evento/components/evento/evento.compon
         ErrorModule,
         VersionTagModule,
         SecurityModule.forRoot(environment.auth),
-        MenuModule
+        MenuModule,
+        TableModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }
