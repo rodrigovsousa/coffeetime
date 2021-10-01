@@ -13,7 +13,7 @@ import { PageNotificationModule, BreadcrumbModule, MenuModule, ErrorStackModule 
 import { ErrorModule, SecurityModule, VersionTagModule } from '@nuvem/angular-base';
 import { DiarioErrosComponent } from './components/diario-erros/diario-erros.component';
 import { BlockUIModule } from 'ng-block-ui';
-import { EventoComponent } from './Evento/evento/evento.component';
+import { EventoComponent } from './modulo-evento/components/evento/evento.component';
 
 
 @NgModule({
