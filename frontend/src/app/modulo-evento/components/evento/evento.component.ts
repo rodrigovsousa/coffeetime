@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Evento from 'src/app/models/Evento';
 
+
 @Component({
   selector: 'app-evento',
   templateUrl: './evento.component.html',

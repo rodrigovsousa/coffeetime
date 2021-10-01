@@ -6,7 +6,7 @@ import Usuario from "../models/Usuario";
     providedIn: "root",
 })
 export class UsuarioService {
-    baseUrl = "http://localhost:4200/usuario"
+    private readonly PATH = environment.apiUrl + "/usuario/";
 
     constructor(private http: HttpClient) {}
 

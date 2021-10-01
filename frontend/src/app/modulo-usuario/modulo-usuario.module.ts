@@ -5,12 +5,13 @@ import { AppRoutingUsuarioModule } from './app-routing-usuario.module';
 
 
 
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     AppRoutingUsuarioModule,
-    SharedModule
+    SharedModule 
   ]
 })
 export class ModuloUsuarioModule { }
