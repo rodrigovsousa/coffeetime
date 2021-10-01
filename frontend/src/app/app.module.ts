@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import {FullCalendarModule} from 'primeng/fullcalendar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -42,7 +43,8 @@ import { EventoComponent } from './modulo-evento/components/evento/evento.compon
         VersionTagModule,
         SecurityModule.forRoot(environment.auth),
         MenuModule,
-        EventoRoutingModule
+        EventoRoutingModule,
+        FullCalendarModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }
