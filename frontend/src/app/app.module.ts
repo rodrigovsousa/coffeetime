@@ -13,9 +13,8 @@ import { PageNotificationModule, BreadcrumbModule, MenuModule, ErrorStackModule 
 import { ErrorModule, SecurityModule, VersionTagModule } from '@nuvem/angular-base';
 import { DiarioErrosComponent } from './components/diario-erros/diario-erros.component';
 import { BlockUIModule } from 'ng-block-ui';
-import { EventoRoutingModule } from './modulo-evento/evento-routing/evento-routing.module';
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
-
+import {TableModule} from 'primeng/table';
 
 @NgModule({
     declarations: [
@@ -42,7 +41,7 @@ import { EventoComponent } from './modulo-evento/components/evento/evento.compon
         VersionTagModule,
         SecurityModule.forRoot(environment.auth),
         MenuModule,
-        EventoRoutingModule
+        TableModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }

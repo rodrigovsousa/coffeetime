@@ -8,7 +8,6 @@ const routes: Routes = [
     { path: 'login-success', component: LoginSuccessComponent },
     { path: 'usuario', loadChildren: './modulo-usuario/modulo-usuario.module#ModuloUsuarioModule'},
     { path: 'evento', loadChildren: './modulo-evento/evento/evento.module#EventoModule'}
-
 ];
 
 @NgModule({
