@@ -2,9 +2,7 @@ package g5.projeto.dbcoffeetime.service.filtro;
 
 import g5.projeto.dbcoffeetime.domain.Evento;
 import g5.projeto.dbcoffeetime.domain.Evento_;
-import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.domain.Usuario_;
-import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.Specification;
@@ -43,10 +41,6 @@ public class EventoFiltro implements EntityFiltro<Evento> {
             ParameterExpression<LocalDate> param = cb.parameter(LocalDate.class, "data");
             predicates.add(cb.equal(root.get(Evento_.data), param));
 
-        }
-        if (Objects.nonNull(nome)) {
-            predicates.add(cb.like(root.get(Evento_.nome),
-                    "%" + nome + '%'));
         }
         if (Objects.nonNull(patrocinador)) {
             predicates.add(cb.like(root.get(String.valueOf(Usuario_.patrocinador)), "%" + patrocinador + "%")

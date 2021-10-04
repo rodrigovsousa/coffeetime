@@ -1,3 +1,4 @@
+/*
 package g5.projeto.dbcoffeetime.web.rest;
 
 import g5.projeto.dbcoffeetime.service.EventoServico;
@@ -44,3 +45,4 @@ public class EventoRecurso {
         return ResponseEntity.noContent().build();
     }
 }
+*/

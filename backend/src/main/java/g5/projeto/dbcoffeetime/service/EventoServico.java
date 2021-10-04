@@ -1,3 +1,4 @@
+/*
 package g5.projeto.dbcoffeetime.service;
 
 import g5.projeto.dbcoffeetime.domain.Evento;
@@ -58,3 +59,4 @@ public class EventoServico {
     }
 
 }
+ */
