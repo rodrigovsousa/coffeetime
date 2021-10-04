@@ -7,7 +7,7 @@ export class EventoService {
     constructor(private http: HttpClient) { }
 
     getEventos() {
-    return this.http.get<any>('assets/scheduleevents.json')
+    return this.http.get<any>('/eventos/')
       .toPromise()
       .then(res => <any[]>res.data)
       .then(data => { return data; });

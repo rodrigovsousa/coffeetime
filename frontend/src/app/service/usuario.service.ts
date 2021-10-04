@@ -1,4 +1,4 @@
-/* import { HttpClient } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 import Usuario from "../models/Usuario";
@@ -6,7 +6,7 @@ import Usuario from "../models/Usuario";
     providedIn: "root",
 })
 export class UsuarioService {
-    private readonly PATH = environment.apiUrl + "/usuario/";
+    private readonly PATH = environment.apiUrl + "/usuarios/";
 
     constructor(private http: HttpClient) {}
 
@@ -27,4 +27,4 @@ export class UsuarioService {
     deleteUsuario(id) {
         return this.http.delete(this.PATH + id);
     }
-} */
+}
