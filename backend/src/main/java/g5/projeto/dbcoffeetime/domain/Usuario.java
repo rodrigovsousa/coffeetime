@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "usuario")
+@Table(name = "USUARIO")
 public class Usuario  implements Serializable {
 
     @Id
@@ -22,7 +22,7 @@ public class Usuario  implements Serializable {
     private Long id;
 
     @Column(name = "NOME")
-    private String nome;
+    private String patrocinador;
 
     @Column(name = "CPF")
     private String cpf;

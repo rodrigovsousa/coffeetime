@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@Entity (name = "motivo")
+@Entity (name = "MOTIVO")
 public class Motivo implements Serializable {
 
     @Id
@@ -21,10 +21,10 @@ public class Motivo implements Serializable {
     @Column (name = "ID")
     private Long id;
 
-    @Column (name = "DESCRICAO", nullable = false, length = 20)
+    @Column (name = "DESCRICAO")
     private String descricao;
 
-    @Column (name = "TITULO", nullable = false, length = 200)
+    @Column (name = "TITULO")
     private String titulo;
 
 }

@@ -3,14 +3,14 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <changeSet id="150920212004" author="matheus.meneses">
-        <createTable tableName="evento">
-            <column name="ID" type="INTEGER"  autoIncrement="true" remarks="identificador da tabela usuario">
+        <createTable tableName="EVENTO">
+            <column name="ID" type="INT"  autoIncrement="true" remarks="identificador da tabela usuario">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="DATA" type="TIMESTAMP"  remarks="coluna que armazena a data do evento">
+            <column name="DATA" type="DATE"  remarks="coluna que armazena a data do evento">
                 <constraints nullable="false"/>
             </column>
             <column name="JUSTIFICATIVAADIAMENTO" type="VARCHAR(200)"  remarks="coluna que armazena o adiamento do evento">
@@ -22,10 +22,10 @@
             <column name="VALOR" type="DECIMAL"  remarks="coluna que armazena o valor do evento">
                 <constraints nullable="false"/>
             </column>
-            <column name="situacao" type="INTEGER"  remarks="coluna que armzena o ID da situacao do evento">
+            <column name="SITUACAO_ID" type="INTEGER"  remarks="coluna que armzena o ID da situacao do evento">
                 <constraints nullable="false"/>
             </column>
-            <column name="PATROCINADOR" type="VARCHAR(80)" remarks="coluna para armazenar o partrocinador do evento">
+            <column name="PATROCINADOR" type="int" remarks="coluna para armazenar o partrocinador do evento">
                 <constraints nullable="false"/>
             </column>
 
@@ -35,24 +35,18 @@
     <changeSet  author="matheus.meneses"  id="150920212007">
             <addForeignKeyConstraint  baseColumnNames="MOTIVO_ID"
                                       baseTableName="evento"
-                                      baseTableSchemaName="public"
                                       constraintName="fk_motivo_evento"
                                       referencedColumnNames="ID"
-                                      referencedTableName="motivo"
-                                      referencedTableSchemaName="public"
-                                      validate="true"/>
+                                      referencedTableName="motivo"/>
 
     </changeSet>
 
     <changeSet  author="matheus.meneses"  id="150920212006">
-        <addForeignKeyConstraint  baseColumnNames="situacao"
+        <addForeignKeyConstraint  baseColumnNames="SITUACAO_ID"
                                   baseTableName="EVENTO"
-                                  baseTableSchemaName="public"
                                   constraintName="fk_situacao_evento"
                                   referencedColumnNames="ID"
-                                  referencedTableName="situacao"
-                                  referencedTableSchemaName="public"
-                                  validate="true"/>
+                                  referencedTableName="SITUACAO"/>
     </changeSet>
 
 </databaseChangeLog>

@@ -1,4 +1,3 @@
-/*
 package g5.projeto.dbcoffeetime.service;
 
 import g5.projeto.dbcoffeetime.domain.Evento;
@@ -8,6 +7,7 @@ import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.EventoMapper;
+import liquibase.pro.packaged.id;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -59,4 +59,3 @@ public class EventoServico {
     }
 
 }
- */

@@ -46,8 +46,6 @@ public class EventoFiltro implements EntityFiltro<Evento> {
             predicates.add(cb.like(root.get(String.valueOf(Usuario_.patrocinador)), "%" + patrocinador + "%")
             );
         }
-
-
         if (Objects.nonNull(id)) {
             Expression<?> param = null;
             predicates.add(cb.equal(root.get(Evento_.id), param));

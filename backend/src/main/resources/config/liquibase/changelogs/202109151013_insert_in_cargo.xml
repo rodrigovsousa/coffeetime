@@ -4,6 +4,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
+    <changeSet id="202110041955" author="erick.leone">
+        <insert tableName="cargo">
+            <column name="DESCRICAO" value="Estagiario"/>
+        </insert>
+    </changeSet>
+
     <changeSet id="202109150843" author="rodrigo">
         <insert tableName="cargo">
             <column name="DESCRICAO" value="Júnior"/>

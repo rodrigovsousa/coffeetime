@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+        <changeSet id="202109152021" author="erick.leone">
+            <createTable tableName="USUARIO">
+                <column name="ID" type="bigint" autoIncrement="true" remarks="identificador da tabela usuario">
+                    <constraints primaryKey="true"/>
+                </column>
+                <column name="NOME" type="VARCHAR(80)"  remarks="nome do usuario">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="CPF" type="VARCHAR(15)"  remarks="cpf do usuario">
+                    <constraints nullable="false" unique="true"/>
+                </column>
+                <column name="DATANASCIMENTO" type="DATE"  remarks="data de nascimento do usuario">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="CARGO_ID" type="bigint" remarks="chave estrangeira de cargo">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="EMAIL" type="VARCHAR(40)" remarks="email do usuario">
+                    <constraints nullable="false" unique="true"/>
+                </column>
+                <column name="ST_ATIVO" type="BOOLEAN" remarks="Status do Usuario">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="TELEFONE" type="VARCHAR(15)" remarks="telefone do usuario">
+                    <constraints nullable="false" unique="true"/>
+                </column>
+
+            </createTable>
+        </changeSet>
+
+        <changeSet id="202109151425" author="erick.leone">
+            <addForeignKeyConstraint baseTableName="USUARIO"
+                                     baseColumnNames="CARGO_ID"
+                                     constraintName="FK_CARGO_USUARIO"
+                                     referencedColumnNames="ID"
+                                     referencedTableName="CARGO" />
+        </changeSet>
+
+        <changeSet id="202110041936" author="erick.leone">
+            <createTable tableName="REL_USUARIO_EVENTO">
+                <column name="EVENTO_ID" type="INT" remarks="pk e fk evento">
+                    <constraints primaryKey="true"/>
+                </column>
+                <column name="PATROCINADOR_ID" type="INT" remarks="pk e fk de patrocinador">
+                    <constraints primaryKey="true"/>
+                </column>
+            </createTable>
+        </changeSet>
+
+        <changeSet id="202110041938" author="erick.leone">
+            <addForeignKeyConstraint baseTableName="REL_USUARIO_EVENTO"
+                                    baseColumnNames="EVENTO_ID"
+                                    constraintName="FK_REL_EVENTO"
+                                    referencedTableName="EVENTO"
+                                    referencedColumnNames="ID"/>
+        </changeSet>
+
+        <changeSet id="202110041942" author="erick.leone">
+            <addForeignKeyConstraint baseTableName="REL_USUARIO_EVENTO"
+                                    baseColumnNames="PATROCINADOR_ID"
+                                    constraintName="FK_REL_USUARIO"
+                                    referencedTableName="USUARIO"
+                                    referencedColumnNames="ID"/>
+        </changeSet>
+
+</databaseChangeLog>
