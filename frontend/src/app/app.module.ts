@@ -1,3 +1,5 @@
+import { EventoNovoComponent } from './modulo-evento/components/evento-novo/evento-novo.component';
+import { EventoAgendadoComponent } from './modulo-evento/components/evento-agendado/evento-agendado.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -15,6 +17,7 @@ import { DiarioErrosComponent } from './components/diario-erros/diario-erros.com
 import { BlockUIModule } from 'ng-block-ui';
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
 import {TableModule} from 'primeng/table';
+import {FullCalendarModule} from 'primeng/fullcalendar';
 
 @NgModule({
     declarations: [
@@ -23,6 +26,8 @@ import {TableModule} from 'primeng/table';
         AppFooterComponent,
         DiarioErrosComponent,
         EventoComponent,
+        EventoAgendadoComponent,
+        EventoNovoComponent
         
     ],
     imports: [
@@ -41,7 +46,8 @@ import {TableModule} from 'primeng/table';
         VersionTagModule,
         SecurityModule.forRoot(environment.auth),
         MenuModule,
-        TableModule
+        TableModule,
+        FullCalendarModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }
