@@ -3,14 +3,24 @@ package g5.projeto.dbcoffeetime.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
 @Setter
-@Entity (name = "EVENTO")
+@Entity (name = "evento")
 public class Evento implements Serializable {
 
     @Id
@@ -27,14 +37,18 @@ public class Evento implements Serializable {
     @Column (name = "VALOR", nullable = false)
     private Double valor;
 
-    @Column (name = "PATROCINADOR", nullable = false, length = 80)
-    private String patrocinador;
-
     @ManyToOne
     private Motivo motivo;
 
     @ManyToOne
     @JoinColumn(name = "SITUACAO")
     private Situacao situacao;
+
+    @ManyToMany
+    @JoinTable(name = "rel_usuario_evento",
+            joinColumns = @JoinColumn(name ="evento_id"),
+            inverseJoinColumns = @JoinColumn(name = "patrocinador_id"))
+    private List<Usuario> patrocinador  = new ArrayList<>();
+
 
 }

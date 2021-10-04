@@ -2,11 +2,11 @@ package g5.projeto.dbcoffeetime.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -42,5 +42,8 @@ public class Usuario  implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CARGO_ID")
     private Cargo cargo;
+
+    @ManyToMany(mappedBy = "patrocinador")
+    private List<Evento> eventos = new ArrayList<>();
 
 }

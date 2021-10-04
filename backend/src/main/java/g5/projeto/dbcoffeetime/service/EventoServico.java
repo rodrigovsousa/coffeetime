@@ -8,6 +8,7 @@ import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.EventoMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class EventoServico {
         return mapper.toDto(repositorio.findAll(filtro.filter()));
         private final EmailServico servico;
 
-        @Scheduled(cron = "0 0 0 * * 5")
+        @Scheduled(cron = "0 0 0 0 0 0")
         public void rotinaEmail () {
             EmailDTO emailDTO = new EmailDTO();
             emailDTO.setDestinatario("destinatario@gmail.com");
