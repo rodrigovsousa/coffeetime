@@ -60,7 +60,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
             { label: 'Evento', icon: 'event', items:[
                 { label: 'Novo Evento', icon: 'add_box', routerLink: ['evento']},
-                { label: 'Agendados', icon: 'view_agenda', routerLink: ['evento/agendado']}
+                { label: 'Agendados', icon: 'event_note', routerLink: ['evento/agendado']}
             ]}
         ];
     }

@@ -6,13 +6,14 @@ import Usuario from "../models/Usuario";
     providedIn: "root",
 })
 export class UsuarioService {
-    private readonly PATH = environment.apiUrl + "/usuario/";
+    private readonly PATH = environment.apiUrl + "/usuarios/";
 
     constructor(private http: HttpClient) {}
 
     getUsuario() {
         return this.http.get<Usuario[]>(this.PATH);
     }
+<<<<<<< HEAD
 
     getUsuarioById(id) {
         return this.http.get<Usuario>(this.PATH + id);
@@ -28,3 +29,6 @@ export class UsuarioService {
         return this.http.delete(this.PATH + id);
     }
 } */
+=======
+}
+>>>>>>> 899baf7098de737d7a9455c9c8d320d14397d09f
