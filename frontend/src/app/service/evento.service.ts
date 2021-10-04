@@ -10,6 +10,6 @@ export class EventService {
     constructor(private http: HttpClient) {}
 
     getEvents() {
-        return this.http.get('modulo-evento\components\evento-agendado\calendarevents.json')
+        return this.http.get('/calendarevents.json')
     }
 }

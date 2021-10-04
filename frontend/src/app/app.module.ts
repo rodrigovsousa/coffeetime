@@ -19,6 +19,7 @@ import { EventoComponent } from './modulo-evento/components/evento/evento.compon
 import {TableModule} from 'primeng/table';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -47,7 +48,8 @@ import {FullCalendarModule} from 'primeng/fullcalendar';
         SecurityModule.forRoot(environment.auth),
         MenuModule,
         TableModule,
-        FullCalendarModule
+        FullCalendarModule,
+        
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }

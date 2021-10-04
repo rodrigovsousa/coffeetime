@@ -24,7 +24,7 @@ export class EventoAgendadoComponent implements OnInit {
 
     this.options = {
       plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
-      defaultDate: '2017-02-01',
+      defaultDate: '2021-10-04',
       header: {
           left: 'prev,next',
           center: 'title',
