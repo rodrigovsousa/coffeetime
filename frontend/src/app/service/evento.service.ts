@@ -1,15 +1,14 @@
-
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
-    providedIn: "root",
+  providedIn: "root",
 })
-export class EventService {
-    
-    constructor(private http: HttpClient) {}
+export class EventoService {
 
-    getEvents() {
-        return this.http.get('modulo-evento\components\evento-agendado\calendarevents.json')
+    constructor(private http: HttpClient) { }
+
+    getEventos() {
+    return this.http.get('modulo-evento\components\evento-agendado\calendarevents.json')
     }
 }

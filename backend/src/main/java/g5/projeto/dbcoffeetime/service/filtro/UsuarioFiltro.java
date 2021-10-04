@@ -1,8 +1,8 @@
 package g5.projeto.dbcoffeetime.service.filtro;
 
-import g5.projeto.dbcoffeetime.domain.Cargo_;
+
 import g5.projeto.dbcoffeetime.domain.Usuario;
-import g5.projeto.dbcoffeetime.domain.Usuario_;
+
 import org.springframework.data.jpa.domain.Specification;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

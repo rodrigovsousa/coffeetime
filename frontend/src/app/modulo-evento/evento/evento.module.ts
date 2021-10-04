@@ -3,6 +3,7 @@ import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventoRoutingModule } from '../evento-routing/evento-routing.module';
+import { FullCalendar, FullCalendarModule } from 'primeng';
 
 
 
@@ -11,7 +12,10 @@ import { EventoRoutingModule } from '../evento-routing/evento-routing.module';
   imports: [
     CommonModule,
     EventoRoutingModule,
-    SharedModule
+    SharedModule,
+    FullCalendarModule,
+    FullCalendar
+
   ]
 })
 export class EventoModule { }
