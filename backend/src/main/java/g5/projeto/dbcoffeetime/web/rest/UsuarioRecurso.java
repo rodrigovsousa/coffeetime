@@ -1,59 +1,53 @@
 package g5.projeto.dbcoffeetime.web.rest;
 
-import g5.projeto.dbcoffeetime.domain.Usuario;
-import g5.projeto.dbcoffeetime.service.UsuarioService;
+import g5.projeto.dbcoffeetime.service.UsuarioServico;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
-import org.springframework.http.MediaType;
+import g5.projeto.dbcoffeetime.service.dto.UsuarioListagemDTO;
+import g5.projeto.dbcoffeetime.service.filtro.UsuarioFiltro;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/usuarios")
 public class UsuarioRecurso {
 
-    public UsuarioRecurso(UsuarioService usuarioService){
-        this.usuarioService = usuarioService;
-    }
-
-    private final UsuarioService usuarioService;
+    private final UsuarioServico servico;
+    private final UsuarioFiltro filtro;
 
     @GetMapping
-    public ResponseEntity<List<UsuarioDTO>> buscarTodos() {
-        List<UsuarioDTO> usuarios = usuarioService.buscarTodos();
-        return ResponseEntity.ok(usuarios);
+    public ResponseEntity<List<UsuarioListagemDTO>> findAll(){
+        return ResponseEntity.ok(servico.findAll());
     }
 
-    @PostMapping("/email")
-    public void enviarEmail (){
-        usuarioService.enviarEmail();
+    @GetMapping("filtro")
+    public ResponseEntity<List<UsuarioDTO>> obterTodosFiltrado(){
+        return ResponseEntity.ok(servico.obterTodosFiltrado(filtro));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<UsuarioDTO>buscarPorId(@PathVariable Long id) {
-        UsuarioDTO usuario = usuarioService.buscar(id);
-        return ResponseEntity.ok(usuario);
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<UsuarioDTO> findById(@PathVariable Long id){
+        UsuarioDTO usuarioDTO = servico.findById(id);
+        return ResponseEntity.ok().body(usuarioDTO);
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UsuarioDTO> cadastrar(@RequestBody UsuarioDTO usuarioDTO) throws URISyntaxException {
-        UsuarioDTO usuarioSalvo = usuarioService.salvar(usuarioDTO);
-        return ResponseEntity.created(new URI("/api/usuarios/"+usuarioSalvo.getId())).build();
+    @PostMapping
+    public ResponseEntity<UsuarioDTO> create(@RequestBody UsuarioDTO dto) {
+        dto = servico.save(dto);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
+        return ResponseEntity.created(uri).body(dto);
     }
 
-    @PutMapping
-    public ResponseEntity<UsuarioDTO> editar(@RequestBody UsuarioDTO usuarioDTO) {
-        UsuarioDTO usuarioEditado = usuarioService.editar(usuarioDTO);
-        return  ResponseEntity.ok(usuarioEditado);
-    }
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<UsuarioDTO> toggleActive(@PathVariable Long id){
+        UsuarioDTO usuarioDTO = servico.toggleUsuarioActive(id);
+        return  ResponseEntity.ok().body(usuarioDTO);
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity deletar(@PathVariable Long id) {
-        usuarioService.deletar(id);
-        return ResponseEntity.ok().build();
     }
 }
 

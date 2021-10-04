@@ -28,7 +28,7 @@
         "@fullcalendar/core": "^4.4.2",
         "@fullcalendar/daygrid": "^4.4.2",
         "@fullcalendar/interaction": "^4.4.2",
-        "@fullcalendar/list": "^5.9.0",
+        "@fullcalendar/list": "^4.4.2",
         "@fullcalendar/timegrid": "^4.4.2",
         "@nuvem/angular-base": "~9.1.2",
         "@nuvem/primeng-components": "~9.1.2",

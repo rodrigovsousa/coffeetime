@@ -1,19 +1,18 @@
 package g5.projeto.dbcoffeetime.service.mapper;
 
-
-import g5.projeto.dbcoffeetime.domain.Cargo;
+import g5.projeto.dbcoffeetime.domain.Motivo;
 import g5.projeto.dbcoffeetime.service.dto.SelectDTO;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface CargoMapper extends EntityMapper<SelectDTO, Cargo>{
+public interface SelectMotivoMapper extends EntityMapper<SelectDTO, Motivo> {
 
     @Mapping(source = "id", target = "value")
-    @Mapping(source = "nome", target = "label")
-    SelectDTO toDto(Cargo cargo);
+    @Mapping(source = "titulo", target = "label")
+    SelectDTO toDto(Motivo motivo);
 
     @InheritInverseConfiguration
-    Cargo toEntity(SelectDTO selectDTO);
+    Motivo toEntity(SelectDTO selectDTO);
 }

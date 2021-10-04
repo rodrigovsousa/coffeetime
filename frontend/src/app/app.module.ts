@@ -1,3 +1,5 @@
+import { EventoNovoComponent } from './modulo-evento/components/evento-novo/evento-novo.component';
+import { EventoAgendadoComponent } from './modulo-evento/components/evento-agendado/evento-agendado.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -16,7 +18,7 @@ import { DiarioErrosComponent } from './components/diario-erros/diario-erros.com
 import { BlockUIModule } from 'ng-block-ui';
 import { EventoRoutingModule } from './modulo-evento/evento-routing/evento-routing.module';
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
-
+import {TableModule} from 'primeng/table';
 
 @NgModule({
     declarations: [
@@ -24,7 +26,9 @@ import { EventoComponent } from './modulo-evento/components/evento/evento.compon
         AppTopbarComponent,
         AppFooterComponent,
         DiarioErrosComponent,
-        EventoComponent
+        EventoComponent,
+        EventoAgendadoComponent,
+        EventoNovoComponent
         
     ],
     imports: [
@@ -43,7 +47,7 @@ import { EventoComponent } from './modulo-evento/components/evento/evento.compon
         VersionTagModule,
         SecurityModule.forRoot(environment.auth),
         MenuModule,
-        EventoRoutingModule,
+        TableModule,
         FullCalendarModule
     ],
     providers: [

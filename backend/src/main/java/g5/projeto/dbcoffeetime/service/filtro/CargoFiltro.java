@@ -1,6 +1,7 @@
 package g5.projeto.dbcoffeetime.service.filtro;
 
 import g5.projeto.dbcoffeetime.domain.Cargo;
+
 import g5.projeto.dbcoffeetime.domain.Cargo_;
 import org.springframework.data.jpa.domain.Specification;
 

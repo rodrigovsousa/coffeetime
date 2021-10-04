@@ -1,3 +1,4 @@
+import { EventoAgendadoComponent } from './../components/evento-agendado/evento-agendado.component';
 import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,7 @@ import { FullCalendar, FullCalendarModule } from 'primeng';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ EventoAgendadoComponent ],
   imports: [
     CommonModule,
     EventoRoutingModule,
