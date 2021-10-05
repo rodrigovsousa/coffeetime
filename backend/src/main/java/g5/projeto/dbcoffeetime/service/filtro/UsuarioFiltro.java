@@ -19,7 +19,7 @@ import java.util.List;
 public class UsuarioFiltro implements EntityFiltro{
 
     private Long id;
-    private String nome;
+    private String patrocinador;
     private String cargo;
     private String email;
     private String cpf;
@@ -41,8 +41,8 @@ public class UsuarioFiltro implements EntityFiltro{
             predicates.add(cb.equal(root.get(Usuario_.id), id));
         }
 
-        if (nome != null){
-            predicates.add(cb.like(root.get(Usuario_.patrocinador),"%" + nome + "%"));
+        if (patrocinador != null){
+            predicates.add(cb.like(root.get(Usuario_.patrocinador),"%" + patrocinador + "%"));
         }
 
         if (email != null){
