@@ -1,1 +1,25 @@
-<p>evento-novo works!</p>
+<h1>TRABALHANDO EM EVENTO</h1>
+
+
+<div class="ui-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-6">
+        <label for="firstname6">Patrocinador</label>
+        <input  id="firstname6" type="text" pInputText> 
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+        <label for="lastname6">Email</label>
+        <input id="lastname6" type="text" pInputText> 
+    </div>
+    <div class="p-field p-col-12">
+        <label for="address">Address</label>
+        <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
+    </div>
+    <p-multiSelect [options]="usuario">
+        <ng-template let-selectedCars pTemplate="selectedItems">
+            <span *ngFor="let selectedCar of selectedCars">{{car.brand}}</span>
+        </ng-template>
+        <ng-template let-car let-i="index" pTemplate="item">
+            {{i}}
+            <div style="font-size:14px;float:right;margin-top:4px">{{car.label}}</div>
+        </ng-template>
+    </p-multiSelect>

@@ -21,6 +21,7 @@ import {TableModule} from 'primeng/table';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import { MensagemComponent } from './components/mensagem/mensagem.component';
 
+import {MultiSelectModule} from 'primeng/multiselect';
 
 @NgModule({
     declarations: [
@@ -53,6 +54,7 @@ import { MensagemComponent } from './components/mensagem/mensagem.component';
         MenuModule,
         TableModule,
         FullCalendarModule,
+        MultiSelectModule
         
     ],
     providers: [

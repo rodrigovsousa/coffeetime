@@ -9,12 +9,12 @@ import UsuarioListagem from '../models/UsuarioListagem';
     providedIn: "root",
 })
 export class CargoService {
-  private readonly PATH = environment.apiUrl + "/usuarios/";
+  private readonly PATH = environment.apiUrl + "/cargo/";
     
     constructor(private http: HttpClient) {}
 
     buscarTodos(): Observable<UsuarioListagem[]> {
-      const url = `${this.PATH}filtro`;
+      const url = `${this.PATH}`;
       return this.http.get<UsuarioListagem[]>(url);
     }
 
