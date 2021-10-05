@@ -14,18 +14,8 @@ export class UsuarioService {
         return this.http.get<Usuario[]>(this.PATH);
     }
 
-
-    getUsuarioById(id) {
-        return this.http.get<Usuario>(this.PATH + id);
-    }
-    postUsuario(Usuario: Usuario) {
-        return this.http.post(this.PATH, Usuario);
+    criarUsuario(usuario: Usuario) {
+        return this.http.post<Usuario>(this.PATH, usuario);
     }
 
-    putUsuario(usuario: Usuario) {
-        return this.http.put(this.PATH, usuario);
-    }
-    deleteUsuario(id) {
-        return this.http.delete(this.PATH + id);
-    }
-} */
+}

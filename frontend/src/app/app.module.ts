@@ -20,6 +20,7 @@ import { EventoRoutingModule } from './modulo-evento/evento-routing/evento-routi
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
 import {TableModule} from 'primeng/table';
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -47,7 +48,8 @@ import {TableModule} from 'primeng/table';
         SecurityModule.forRoot(environment.auth),
         MenuModule,
         TableModule,
-        FullCalendarModule
+        FullCalendarModule,
+        
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }

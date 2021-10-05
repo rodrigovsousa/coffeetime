@@ -27,18 +27,16 @@ export class EventoAgendadoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.eventoService.getEventos().then(eventos => {this.eventos = eventos; } );
+    this.eventService.getEvents().subscribe(events => {this.events = events;})
 
-        this.options = {
-            plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
-            defaultDate: '2017-02-01',
-            header: {
-                left: 'Anterior,Próximo',
-                center: 'title',
-                right: 'mes,agendaSemana,agendaDia'
-            },
-            editable: true
-    };
+    this.options = {
+      plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+      defaultDate: '2021-10-04',
+      header: {
+          left: 'prev,next',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+      }
   }
 }
 
