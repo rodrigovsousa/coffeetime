@@ -34,12 +34,29 @@
             </createTable>
         </changeSet>
 
-        <changeSet id="202109151425" author="erick.leone">
+        <changeSet id="202110151425" author="erick.leone">
             <addForeignKeyConstraint baseTableName="USUARIO"
                                      baseColumnNames="CARGO_ID"
                                      constraintName="FK_CARGO_USUARIO"
                                      referencedColumnNames="ID"
                                      referencedTableName="CARGO" />
         </changeSet>
+
+        <changeSet id="202110051523" author="erick.leone">
+            <addForeignKeyConstraint baseTableName="REL_USUARIO_EVENTO"
+                                     baseColumnNames="EVENTO_ID"
+                                     constraintName="FK_REL_EVENTO"
+                                     referencedTableName="EVENTO"
+                                     referencedColumnNames="ID"/>
+        </changeSet>
+
+        <changeSet id="2021101553" author="erick.leone">
+            <addForeignKeyConstraint baseTableName="REL_USUARIO_EVENTO"
+                                    baseColumnNames="PATROCINADOR_ID"
+                                    constraintName="FK_REL_USUARIO"
+                                    referencedTableName="USUARIO"
+                                    referencedColumnNames="ID"/>
+        </changeSet>
+
 
 </databaseChangeLog>
