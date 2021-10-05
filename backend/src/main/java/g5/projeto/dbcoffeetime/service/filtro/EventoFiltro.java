@@ -20,7 +20,6 @@ import java.util.Objects;
 public class EventoFiltro implements EntityFiltro<Evento> {
 
     private Long id;
-    private String nome;
     private String data;
     private Double valor;
     private String patrocinador;
@@ -53,6 +52,4 @@ public class EventoFiltro implements EntityFiltro<Evento> {
         return predicates;
 
     }
-
-
 }

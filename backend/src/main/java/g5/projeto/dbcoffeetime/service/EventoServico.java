@@ -7,7 +7,6 @@ import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.EventoMapper;
-import liquibase.pro.packaged.id;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -40,22 +39,20 @@ public class EventoServico {
             servico.enviarEmail(emailDTO);
         }
 
-        public List<EventoDTO> findAll () {
+        public List<EventoDTO> findAll() {
             return mapper.toDto(repositorio.findAll());
         }
 
-        public EventoDTO findById (Long id){
+        public EventoDTO findById(Long id) {
             Optional<Evento> obj = repositorio.findById(id);
             Evento entity = obj.orElseThrow(() -> new ResourceNotFoundException("Evento não encontrado!"));
             return mapper.toDto(entity);
         }
 
-        public EventoDTO insert (EventoDTO dto){
+        public EventoDTO insert(EventoDTO dto) {
             Evento entity = mapper.toEntity(dto);
             entity = repositorio.save(entity);
             return mapper.toDto(entity);
         }
-
-    }
 
 }

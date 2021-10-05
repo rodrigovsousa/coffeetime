@@ -3,24 +3,16 @@ package g5.projeto.dbcoffeetime.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
 @Getter
 @Setter
-@Entity (name = "EVENTO")
+@Table(name = "EVENTO")
 public class Evento implements Serializable {
 
     @Id
