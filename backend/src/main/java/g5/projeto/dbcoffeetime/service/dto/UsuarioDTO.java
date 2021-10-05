@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
@@ -22,7 +25,7 @@ public class UsuarioDTO implements Serializable {
 
     @NotBlank
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dtNascimento;
+    private LocalDate dataDeNascimento;
 
     @CPF
     private String cpf;

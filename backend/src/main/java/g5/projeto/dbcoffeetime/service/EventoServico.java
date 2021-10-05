@@ -57,7 +57,7 @@ public class EventoServico {
             emailDTO.setDestinatario(usuarioEvento.getUsuario().getEmail());
             emailDTO.setAssunto("Novo evento " + usuarioEvento.getEvento().getMotivo().getDescricao());
             emailDTO.setCorpo("Novo evento patrocinado por " + usuarioEvento.getEvento().getPatrocinador());
-            emailDTO.getCopias().add("matheus1995@gmail.com");
+            emailDTO.getCopias().add("leoneerick56@gmail.com");
 
             emailServico.enviarEmail(emailDTO);
 

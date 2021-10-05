@@ -41,7 +41,6 @@ public class MotivoRecurso {
 
     }
 
-
     @PostMapping
     public ResponseEntity<MotivoDTO> create(@RequestBody MotivoDTO dto) {
         dto = servico.save(dto);

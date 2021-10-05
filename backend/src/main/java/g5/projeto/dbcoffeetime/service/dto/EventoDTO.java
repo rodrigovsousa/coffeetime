@@ -1,14 +1,11 @@
 package g5.projeto.dbcoffeetime.service.dto;
 
-
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
@@ -18,10 +15,6 @@ import java.util.List;
 public class EventoDTO implements Serializable {
 
     private Long id;
-
-    @NotBlank
-    @Size(min = 5, max = 20)
-    private String nome;
 
     @NotBlank
     @JsonFormat(pattern = "dd/MM/yyyy")

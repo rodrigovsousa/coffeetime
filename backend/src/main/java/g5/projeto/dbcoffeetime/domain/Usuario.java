@@ -2,18 +2,18 @@ package g5.projeto.dbcoffeetime.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
 @Getter
 @Setter
-@Table(name = "usuario")
+@Table(name = "USUARIO")
 public class Usuario  implements Serializable {
 
     @Id
@@ -22,7 +22,7 @@ public class Usuario  implements Serializable {
     private Long id;
 
     @Column(name = "NOME")
-    private String nome;
+    private String patrocinador;
 
     @Column(name = "CPF")
     private String cpf;
@@ -42,5 +42,8 @@ public class Usuario  implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CARGO_ID")
     private Cargo cargo;
+
+    @ManyToMany(mappedBy = "patrocinador")
+    private List<Evento> eventos = new ArrayList<>();
 
 }

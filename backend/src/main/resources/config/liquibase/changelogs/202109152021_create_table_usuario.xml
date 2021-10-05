@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
         <changeSet id="202109152021" author="erick.leone">
-            <createTable tableName="usuario">
-                <column name="ID" type="INT" autoIncrement="true" remarks="identificador da tabela usuario">
+            <createTable tableName="USUARIO">
+                <column name="ID" type="bigint" autoIncrement="true" remarks="identificador da tabela usuario">
                     <constraints primaryKey="true"/>
                 </column>
                 <column name="NOME" type="VARCHAR(80)"  remarks="nome do usuario">
                     <constraints nullable="false"/>
                 </column>
-                <column name="CPF" type="VARCHAR(14)"  remarks="cpf do usuario">
+                <column name="CPF" type="VARCHAR(15)"  remarks="cpf do usuario">
                     <constraints nullable="false" unique="true"/>
                 </column>
                 <column name="DATANASCIMENTO" type="DATE"  remarks="data de nascimento do usuario">
                     <constraints nullable="false"/>
                 </column>
-                <column name="CARGO_ID" type="INT" remarks="chave estrangeira de cargo">
+                <column name="CARGO_ID" type="bigint" remarks="chave estrangeira de cargo">
                     <constraints nullable="false"/>
                 </column>
                 <column name="EMAIL" type="VARCHAR(40)" remarks="email do usuario">
@@ -35,7 +35,11 @@
         </changeSet>
 
         <changeSet id="202109151425" author="erick.leone">
-            <addForeignKeyConstraint baseColumnNames="CARGO_ID" baseTableName="usuario" constraintName="fk_cargo_usuario" referencedColumnNames="ID" referencedTableName="cargo" />
+            <addForeignKeyConstraint baseTableName="USUARIO"
+                                     baseColumnNames="CARGO_ID"
+                                     constraintName="FK_CARGO_USUARIO"
+                                     referencedColumnNames="ID"
+                                     referencedTableName="CARGO" />
         </changeSet>
 
 </databaseChangeLog>

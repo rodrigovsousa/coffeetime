@@ -19,7 +19,6 @@ import java.util.Objects;
 public class EventoFiltro implements EntityFiltro<Evento> {
 
     private Long id;
-    private String nome;
     private String data;
     private Double valor;
     private String patrocinador;
@@ -40,16 +39,10 @@ public class EventoFiltro implements EntityFiltro<Evento> {
             predicates.add(cb.greaterThanOrEqualTo(root.get(Evento_.data), date));
 
         }
-        if (Objects.nonNull(nome)) {
-            predicates.add(cb.like(root.get(Evento_.nome),
-                    "%" + nome + '%'));
-        }
         if (Objects.nonNull(patrocinador)) {
             predicates.add(cb.like(root.get(Evento_.patrocinador), "%" + patrocinador + "%")
             );
         }
-
-
         if (Objects.nonNull(id)) {
             Expression<?> param = null;
             predicates.add(cb.equal(root.get(Evento_.id), id));
@@ -57,6 +50,4 @@ public class EventoFiltro implements EntityFiltro<Evento> {
         return predicates;
 
     }
-
-
 }

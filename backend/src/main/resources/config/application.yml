@@ -22,9 +22,12 @@ spring:
     properties:
       mail:
         smtp:
+          auth: true
           starttls:
             enable: true
-          auth: true
+            required: true
+          quitwait: false
+
 
 
 application:

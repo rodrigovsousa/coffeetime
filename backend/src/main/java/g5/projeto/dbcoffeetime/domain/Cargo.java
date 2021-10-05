@@ -14,9 +14,9 @@ public class Cargo implements Serializable {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "ID", nullable = false)
+    @Column (name = "ID")
     private Long id;
-    @Column (name = "DESCRICAO", nullable = false, length = 20)
+    @Column (name = "DESCRICAO")
     private String descricao;
 
 }

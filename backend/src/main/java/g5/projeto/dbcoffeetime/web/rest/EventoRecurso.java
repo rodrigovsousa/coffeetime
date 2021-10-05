@@ -4,6 +4,7 @@ import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
@@ -15,7 +16,6 @@ import java.util.List;
 public class EventoRecurso {
 
     private final EventoServico eventoServico;
-
 
     @GetMapping("/filtro")
     ResponseEntity<List<EventoDTO>> filtrarData(EventoFiltro filtro) {

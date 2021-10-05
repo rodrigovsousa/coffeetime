@@ -14,4 +14,19 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="202110041952" author="erick.leone">
+        <insert tableName="SITUACAO">
+            <column name="DESCRICAO" value="Evento Adiado"/>
+        </insert>
+        <insert tableName="SITUACAO">
+            <column name="DESCRICAO" value="Evento Em espera"/>
+        </insert>
+        <insert tableName="SITUACAO">
+            <column name="DESCRICAO" value="Evento Realizado"/>
+        </insert>
+        <insert tableName="SITUACAO">
+            <column name="DESCRICAO" value="Evento Cancelado"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
