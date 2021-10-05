@@ -43,31 +43,4 @@
                                      referencedTableName="CARGO" />
         </changeSet>
 
-        <changeSet id="202110041936" author="erick.leone">
-            <createTable tableName="REL_USUARIO_EVENTO">
-                <column name="EVENTO_ID" type="INT" remarks="pk e fk evento">
-                    <constraints primaryKey="true"/>
-                </column>
-                <column name="PATROCINADOR_ID" type="INT" remarks="pk e fk de patrocinador">
-                    <constraints primaryKey="true"/>
-                </column>
-            </createTable>
-        </changeSet>
-
-        <changeSet id="202110041938" author="erick.leone">
-            <addForeignKeyConstraint baseTableName="REL_USUARIO_EVENTO"
-                                    baseColumnNames="EVENTO_ID"
-                                    constraintName="FK_REL_EVENTO"
-                                    referencedTableName="EVENTO"
-                                    referencedColumnNames="ID"/>
-        </changeSet>
-
-        <changeSet id="202110041942" author="erick.leone">
-            <addForeignKeyConstraint baseTableName="REL_USUARIO_EVENTO"
-                                    baseColumnNames="PATROCINADOR_ID"
-                                    constraintName="FK_REL_USUARIO"
-                                    referencedTableName="USUARIO"
-                                    referencedColumnNames="ID"/>
-        </changeSet>
-
 </databaseChangeLog>
