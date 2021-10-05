@@ -1,3 +1,4 @@
+import { UsuarioNovoComponent } from './modulo-usuario/components/usuario-novo/usuario-novo.component';
 import { EventoNovoComponent } from './modulo-evento/components/evento-novo/evento-novo.component';
 import { EventoAgendadoComponent } from './modulo-evento/components/evento-agendado/evento-agendado.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,7 @@ import { BlockUIModule } from 'ng-block-ui';
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
 import {TableModule} from 'primeng/table';
 import {FullCalendarModule} from 'primeng/fullcalendar';
+import { MensagemComponent } from './components/mensagem/mensagem.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {FullCalendarModule} from 'primeng/fullcalendar';
         DiarioErrosComponent,
         EventoComponent,
         EventoAgendadoComponent,
-        EventoNovoComponent
+        EventoNovoComponent,
+        MensagemComponent
+    
         
     ],
     imports: [

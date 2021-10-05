@@ -6,11 +6,10 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 
 
 const routes: Routes = [
-  { path: '', component: UsuarioComponent, children: [
     { path: '', component: UsuarioListarComponent },
     { path: 'cadastrar', component: UsuarioNovoComponent }
-  ]},
-];
+  
+]
 
 @NgModule({
   imports: [

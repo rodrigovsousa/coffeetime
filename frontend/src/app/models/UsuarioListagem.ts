@@ -1,4 +1,4 @@
-import Select from "./Select";
+import { Select } from 'src/app/models/Select';
 
 export default interface UsuarioListagem {
     id: string;
