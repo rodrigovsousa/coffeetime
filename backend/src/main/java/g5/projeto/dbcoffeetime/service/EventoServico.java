@@ -8,8 +8,6 @@ import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.EventoMapper;
-import lombok.RequiredArgsConstructor;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -37,7 +35,7 @@ public class EventoServico {
     }
 
 
-    @Scheduled(cron = "0 23 15 * * *")
+    @Scheduled(cron = "0 43 15 * * *")
     public  void rotinaDeEmail(){
         List<Evento> eventos = eventoRepositorio.findAllByDataGreaterThanEqual(LocalDate.now());
 
