@@ -37,7 +37,7 @@ public class EventoServico {
     }
 
 
-    @Scheduled(cron = "0 06 15 * * *")
+    @Scheduled(cron = "0 23 15 * * *")
     public  void rotinaDeEmail(){
         List<Evento> eventos = eventoRepositorio.findAllByDataGreaterThanEqual(LocalDate.now());
 
