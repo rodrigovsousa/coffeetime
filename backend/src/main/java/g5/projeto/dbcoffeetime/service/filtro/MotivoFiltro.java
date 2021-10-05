@@ -3,6 +3,7 @@ package g5.projeto.dbcoffeetime.service.filtro;
 import g5.projeto.dbcoffeetime.domain.Motivo;
 import g5.projeto.dbcoffeetime.domain.Motivo_;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
+@Component
 public class MotivoFiltro implements EntityFiltro {
 
     private Long id;

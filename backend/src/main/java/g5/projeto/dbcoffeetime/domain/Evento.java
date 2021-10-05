@@ -21,7 +21,7 @@ public class Evento implements Serializable {
     @Column (name = "DATA", nullable = false)
     private LocalDate data;
 
-    @Column (name = "JUSTIFICATIVAADIAMENTO", nullable = false, length = 200)
+    @Column (name = "JUSTIFICATIVAADIAMENTO", length = 200)
     private String justificativaAdiamento;
 
     @Column (name = "VALOR", nullable = false)
@@ -29,6 +29,9 @@ public class Evento implements Serializable {
 
     @Column (name = "PATROCINADOR", nullable = false, length = 80)
     private String patrocinador;
+
+    @Column (name = "NOME", nullable = false, length = 100)
+    private  String nome;
 
     @ManyToOne
     private Motivo motivo;

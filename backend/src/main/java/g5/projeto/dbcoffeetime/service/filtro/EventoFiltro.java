@@ -1,10 +1,6 @@
 package g5.projeto.dbcoffeetime.service.filtro;
 
-import g5.projeto.dbcoffeetime.domain.Evento;
-import g5.projeto.dbcoffeetime.domain.Evento_;
-import g5.projeto.dbcoffeetime.domain.Usuario;
-import g5.projeto.dbcoffeetime.domain.Usuario_;
-import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
+import g5.projeto.dbcoffeetime.domain.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.Specification;
@@ -12,6 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -29,9 +26,7 @@ public class EventoFiltro implements EntityFiltro<Evento> {
 
     @Override
     public Specification<Evento> filter() {
-        return (root, cq, cb) ->
-                cb.and(getPredicates(root, cb, cq)
-                        .toArray(new Predicate[0]));
+        return (root, cq, cb) -> cb.and(getPredicates(root, cb, cq).toArray(new Predicate[0]));
     }
 
     private List<Predicate> getPredicates(Root<Evento> root, CriteriaBuilder cb, CriteriaQuery<?> cq) {
@@ -40,8 +35,9 @@ public class EventoFiltro implements EntityFiltro<Evento> {
         cq.orderBy(cb.desc(root.get(Evento_.data)));
 
         if (Objects.nonNull(data)) {
-            ParameterExpression<LocalDate> param = cb.parameter(LocalDate.class, "data");
-            predicates.add(cb.equal(root.get(Evento_.data), param));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate date = LocalDate.parse(data, formatter);
+            predicates.add(cb.greaterThanOrEqualTo(root.get(Evento_.data), date));
 
         }
         if (Objects.nonNull(nome)) {
@@ -49,14 +45,14 @@ public class EventoFiltro implements EntityFiltro<Evento> {
                     "%" + nome + '%'));
         }
         if (Objects.nonNull(patrocinador)) {
-            predicates.add(cb.like(root.get(String.valueOf(Usuario_.patrocinador)), "%" + patrocinador + "%")
+            predicates.add(cb.like(root.get(Evento_.patrocinador), "%" + patrocinador + "%")
             );
         }
 
 
         if (Objects.nonNull(id)) {
             Expression<?> param = null;
-            predicates.add(cb.equal(root.get(Evento_.id), param));
+            predicates.add(cb.equal(root.get(Evento_.id), id));
         }
         return predicates;
 

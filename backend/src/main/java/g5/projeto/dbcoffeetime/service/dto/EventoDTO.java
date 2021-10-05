@@ -38,7 +38,7 @@ public class EventoDTO implements Serializable {
     private SelectDTO motivo;
 
     @NotBlank
-    private List<PatrocinadorDTO> patrocinador;
+    private String patrocinador;
 
-};
+}
 

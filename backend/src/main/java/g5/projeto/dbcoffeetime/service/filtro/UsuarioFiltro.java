@@ -1,9 +1,13 @@
 package g5.projeto.dbcoffeetime.service.filtro;
 
 
+import g5.projeto.dbcoffeetime.domain.Cargo_;
 import g5.projeto.dbcoffeetime.domain.Usuario;
 
+import g5.projeto.dbcoffeetime.domain.Usuario_;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -11,7 +15,7 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class UsuarioFiltro implements EntityFiltro{
 
     private Long id;
