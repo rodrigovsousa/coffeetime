@@ -14,9 +14,12 @@
                 <constraints nullable="false"/>
             </column>
             <column name="JUSTIFICATIVAADIAMENTO" type="VARCHAR(200)"  remarks="coluna que armazena o adiamento do evento">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="MOTIVO_ID" type="INTEGER" remarks="coluna que armazena codigo do motivo do cancelamento">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NOME" type="VARCHAR(100)" remarks="coluna que armazena o nome do evento">
                 <constraints nullable="false"/>
             </column>
             <column name="VALOR" type="DECIMAL"  remarks="coluna que armazena o valor do evento">

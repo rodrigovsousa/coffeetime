@@ -1,5 +1,4 @@
 package g5.projeto.dbcoffeetime.web.rest;
-
 import g5.projeto.dbcoffeetime.service.EventoServico;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
@@ -7,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import java.net.URI;
 import java.util.List;
 
@@ -19,7 +17,7 @@ public class EventoRecurso {
     private final EventoServico eventoServico;
 
 
-    @GetMapping("filtro")
+    @GetMapping("/filtro")
     ResponseEntity<List<EventoDTO>> filtrarData(EventoFiltro filtro) {
         return ResponseEntity.ok(eventoServico.filtrarData(filtro));
     }
@@ -31,6 +29,12 @@ public class EventoRecurso {
         return ResponseEntity.ok().body(eventoDTO);
     }
 
+    @GetMapping()
+    public ResponseEntity<List<EventoDTO>> findAll(){
+         List <EventoDTO> eventos = eventoServico.buscarTodos();
+         return ResponseEntity.ok().body(eventos);
+    }
+
     @PostMapping
     public ResponseEntity<EventoDTO> insert(@RequestBody EventoDTO dto) {
         dto = eventoServico.insert(dto);
@@ -38,9 +42,10 @@ public class EventoRecurso {
         return ResponseEntity.created(uri).body(dto);
     }
 
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<EventoDTO> delete(@PathVariable Long id) {
-        servico.delete(id);
+        eventoServico.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

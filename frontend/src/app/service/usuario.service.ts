@@ -13,4 +13,9 @@ export class UsuarioService {
     getUsuario() {
         return this.http.get<Usuario[]>(this.PATH);
     }
+
+    criarUsuario(usuario: Usuario) {
+        return this.http.post<Usuario>(this.PATH, usuario);
+    }
+
 }
