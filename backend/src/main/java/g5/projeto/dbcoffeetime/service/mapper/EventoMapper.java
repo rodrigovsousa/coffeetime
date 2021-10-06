@@ -4,6 +4,6 @@ import g5.projeto.dbcoffeetime.domain.Evento;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring", uses = {SelectMotivoMapper.class, SituacaoMapper.class, UsuarioMapper.class})
+@Mapper(componentModel = "spring", uses = {SelectMotivoMapper.class, SituacaoMapper.class, EventoPatrocinadorMapper.class})
 public interface EventoMapper extends EntityMapper<EventoDTO, Evento>{
 }

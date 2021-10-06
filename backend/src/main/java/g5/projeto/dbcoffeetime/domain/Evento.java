@@ -23,6 +23,8 @@ public class Evento implements Serializable {
     @Column (name = "DATA")
     private LocalDate data;
 
+    @Column (name = "JUSTIFICATIVAADIAMENTO", length = 200)
+    private String justificativaAdiamento;
 
     @Column (name = "VALOR", nullable = false)
     private Double valor;
@@ -34,11 +36,11 @@ public class Evento implements Serializable {
     @JoinColumn (name = "MOTIVO_ID")
     private Motivo motivo;
 
+    @ManyToOne
+    @JoinColumn(name = "SITUACAO_ID")
+    private Situacao situacao;
 
-   @ManyToMany
-    @JoinTable(name = "usuario_evento",
-            joinColumns = @JoinColumn(name ="EVENTO_ID"),
-            inverseJoinColumns = @JoinColumn(name = "USUARIO_ID"))
-    private List<Usuario> patrocinador = new ArrayList<>();
+    @OneToMany(mappedBy = "evento")
+    private List<EventoPatrocinador> patrocinadores = new ArrayList<>();
 
 }

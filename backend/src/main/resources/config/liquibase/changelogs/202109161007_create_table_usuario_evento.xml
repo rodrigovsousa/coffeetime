@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="061020210004" author="matheus.meneses">
+        <createTable tableName="usuario_evento">
+            <column name="USUARIOID" type="INTEGER"  remarks="codigo do usuario presente na tabela ususario">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="EVENTOID" type="INTEGER"  remarks="codigo do usuario presente na tabela EVENTOID">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet  author="matheus.meneses"  id="061020210005">
+        <addForeignKeyConstraint  baseColumnNames="EVENTOID"
+                                  baseTableName="usuario_evento"
+                                  baseTableSchemaName="public"
+                                  constraintName="fk_usuarioevento_evento"
+                                  referencedColumnNames="ID"
+                                  referencedTableName="EVENTO"
+                                  referencedTableSchemaName="public"
+                                  validate="true"/>
+    </changeSet>
+
+    <changeSet  author="matheus.meneses"  id="061020210006  ">
+        <addForeignKeyConstraint  baseColumnNames="USUARIOID"
+                                  baseTableName="usuario_evento"
+                                  baseTableSchemaName="public"
+                                  constraintName="fk_usuarioevento_usuario"
+                                  referencedColumnNames="ID"
+                                  referencedTableName="usuario"
+                                  referencedTableSchemaName="public"
+                                  validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>
