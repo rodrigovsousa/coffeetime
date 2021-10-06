@@ -1,4 +1,5 @@
 import Cargo from "./Cargo";
+import { Select } from "./Select";
 
 export default interface Usuario {
     id: string;
@@ -8,5 +9,5 @@ export default interface Usuario {
     dataDeNascimento: any;
     status: boolean;
     telefone: string;
-    cargo: Cargo;
+    cargo: Select;
 }

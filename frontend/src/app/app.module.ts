@@ -1,6 +1,11 @@
+import { AtivoPipe } from './modulo-usuario/pipes/ativo.pipe';
+import { UsuarioNovoComponent } from './modulo-usuario/components/usuario-novo/usuario-novo.component';
+import { EventoNovoComponent } from './modulo-evento/components/evento-novo/evento-novo.component';
+import { EventoAgendadoComponent } from './modulo-evento/components/evento-agendado/evento-agendado.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import {FullCalendarModule} from 'primeng/fullcalendar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -13,8 +18,11 @@ import { PageNotificationModule, BreadcrumbModule, MenuModule, ErrorStackModule 
 import { ErrorModule, SecurityModule, VersionTagModule } from '@nuvem/angular-base';
 import { DiarioErrosComponent } from './components/diario-erros/diario-erros.component';
 import { BlockUIModule } from 'ng-block-ui';
-import { EventoComponent } from './Evento/evento/evento.component';
+import { EventoRoutingModule } from './modulo-evento/evento-routing/evento-routing.module';
+import { EventoComponent } from './modulo-evento/components/evento/evento.component';
+import {TableModule} from 'primeng/table';
 
+import {MultiSelectModule} from 'primeng/multiselect';
 
 @NgModule({
     declarations: [
@@ -23,7 +31,8 @@ import { EventoComponent } from './Evento/evento/evento.component';
         AppFooterComponent,
         DiarioErrosComponent,
         EventoComponent,
-        
+        EventoAgendadoComponent,
+        EventoNovoComponent
     ],
     imports: [
         BlockUIModule.forRoot({
@@ -40,7 +49,11 @@ import { EventoComponent } from './Evento/evento/evento.component';
         ErrorModule,
         VersionTagModule,
         SecurityModule.forRoot(environment.auth),
-        MenuModule
+        MenuModule,
+        TableModule,
+        FullCalendarModule,
+        MultiSelectModule
+        
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }
