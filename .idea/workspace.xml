@@ -4,7 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31622e69-7ff7-464b-a8fe-934b8521b21c" name="Changes" comment="" />
+    <list default="true" id="31622e69-7ff7-464b-a8fe-934b8521b21c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/DbCoffeetimeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/config/ApplicationProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/domain/Cargo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/domain/Evento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/domain/Motivo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/domain/Situacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/domain/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/domain/UsuarioEvento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/domain/UsuarioEventoId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/repositorio/CargoRepositorio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/repositorio/EventoRepositorio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/repositorio/MotivoRepositorio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/repositorio/SituacaoRepositorio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/repositorio/UsuarioEventoRepositorio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/repositorio/UsuarioRepositorio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/EmailServico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/EventoServico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/CargoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/EmailDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/EventoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/MotivoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/SelectDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/SituacaoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/UsuarioDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/dto/UsuarioListagemDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/filtro/CargoFiltro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/filtro/EntityFiltro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/filtro/UsuarioFiltro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/mapper/CargoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/mapper/EntityMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/mapper/EventoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/service/mapper/UsuarioMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/web/rest/EventoRecurso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/web/rest/MotivoRecurso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/java/g5/projeto/dbcoffeetime/web/rest/UsuarioRecurso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/changelogs/202109151012_create_user_motivo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/changelogs/202109151013_insert_in_cargo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/changelogs/202109151014_create_user_situacao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/changelogs/202109151015_create_user_cargo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/changelogs/202109152021_create_user_usuario.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/changelogs/202109161006_create_user_evento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/changelogs/202109161017_create_user_usuarioevento.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/main/resources/config/liquibase/master.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/test/java/g5/projeto/dbcoffeetime/DbCoffeetimeApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/test/java/g5/projeto/dbcoffeetime/builder/ConstrutorDeEntidade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/test/java/g5/projeto/dbcoffeetime/builder/CustomizacaoEntidade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/test/java/g5/projeto/dbcoffeetime/util/TestUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/test/java/g5/projeto/dbcoffeetime/web/rest/EventoRecursoTeste.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-coffeetime/src/test/java/resources/config/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modulo-usuario/components/usuario-listar/usuario-listar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modulo-usuario/components/usuario-listar/usuario-listar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modulo-usuario/components/usuario-listar/usuario-listar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modulo-usuario/components/usuario-listar/usuario-listar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/service/usuario.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/usuario.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,11 +87,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/db-coffeetime" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

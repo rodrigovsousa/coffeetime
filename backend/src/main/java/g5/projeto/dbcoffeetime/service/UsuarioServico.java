@@ -43,7 +43,7 @@ public class UsuarioServico {
 
     public UsuarioDTO toggleUsuarioActive(Long id) {
         UsuarioDTO dto = findById(id);
-        dto.setActive(!dto.isActive());
+        dto.setStatus(!dto.isStatus());
         save(dto);
         return dto;
     }

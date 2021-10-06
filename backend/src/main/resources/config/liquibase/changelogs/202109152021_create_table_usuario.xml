@@ -25,7 +25,7 @@
                 <column name="EMAIL" type="VARCHAR(40)" remarks="email do usuario">
                     <constraints nullable="false" unique="true"/>
                 </column>
-                <column name="ST_ATIVO" type="BOOLEAN" remarks="Status do Usuario">
+                <column name="Status" type="BOOLEAN" remarks="Status do Usuario">
                     <constraints nullable="false"/>
                 </column>
                 <column name="TELEFONE" type="VARCHAR(15)" remarks="telefone do usuario">
