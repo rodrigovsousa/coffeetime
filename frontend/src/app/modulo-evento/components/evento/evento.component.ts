@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Evento from 'src/app/models/Evento';
 
 
 @Component({
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./evento.component.css']
 })
 export class EventoComponent implements OnInit {
+
+  eventos: Evento[];
 
   constructor() { }
 

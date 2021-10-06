@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Usuario from 'src/app/models/Usuario';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   selector: 'app-evento-novo',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventoNovoComponent implements OnInit {
 
-  constructor() { }
+usuario: Usuario[];
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.getUsuarios();
+  }
+
+  public getUsuarios(): void {
+    this.usuarioService.getUsuario().subscribe((resultado) => {
+      this.usuario = resultado;
+  });
   }
 
 }

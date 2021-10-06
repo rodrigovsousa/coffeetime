@@ -1,27 +1,31 @@
 package g5.projeto.dbcoffeetime.service.dto;
 
-import g5.projeto.dbcoffeetime.domain.Evento;
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class UsuarioDTO {
+public class UsuarioDTO implements Serializable {
 
     private Long id;
 
     @NotBlank
-    @Size(max = 120)
-    private String nome;
+    @Size(min = 3, max = 50)
+    private String patrocinador;
+
+    @NotBlank
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataDeNascimento;
 
     @CPF
     private String cpf;
@@ -30,16 +34,16 @@ public class UsuarioDTO {
     private String email;
 
     @NotBlank
-    private LocalDate dataDeNascimento;
-
-    @NotBlank
-    private boolean status;
-
-    @NotBlank
-    @Size(min = 11, max = 15)
+    @Min(11)
     private String telefone;
 
-    @NotNull
+    @NotBlank
+    private boolean active;
+
+    @NotBlank
     private SelectDTO cargo;
+
+    @NotBlank
+    private List<EventoDTO> eventos;
 
 }

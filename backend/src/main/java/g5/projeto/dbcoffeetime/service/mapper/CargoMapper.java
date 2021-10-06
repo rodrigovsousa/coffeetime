@@ -7,15 +7,13 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-
-@Mapper(componentModel = "spring", uses = {})
-public interface CargoMapper extends EntityMapper<SelectDTO, Cargo> {
+@Mapper(componentModel = "spring")
+public interface CargoMapper extends EntityMapper<SelectDTO, Cargo>{
 
     @Mapping(source = "id", target = "value")
-    @Mapping(source = "descricao", target = "nome")
+    @Mapping(source = "descricao", target = "label")
     SelectDTO toDto(Cargo cargo);
 
     @InheritInverseConfiguration
     Cargo toEntity(SelectDTO selectDTO);
-
 }

@@ -2,6 +2,7 @@ import { UsuarioService } from './../../../service/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import Usuario from 'src/app/models/Usuario';
 
+
 @Component({
   selector: 'app-usuario-listar',
   templateUrl: './usuario-listar.component.html',

@@ -2,7 +2,6 @@ import { UsuarioNovoComponent } from './components/usuario-novo/usuario-novo.com
 import { UsuarioListarComponent } from './components/usuario-listar/usuario-listar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsuarioComponent } from './components/usuario/usuario.component';
 
 
 const routes: Routes = [
@@ -12,9 +11,10 @@ const routes: Routes = [
 ]
 
 @NgModule({
+  declarations: [],
   imports: [
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+    exports: [RouterModule]
 })
 export class AppRoutingUsuarioModule { }

@@ -1,26 +1,33 @@
-import { EventService } from './../../../service/evento.service';
 import { Component, OnInit } from '@angular/core';
+import {FullCalendar} from 'primeng/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-
-
+import { Calendar } from '@fullcalendar/core';
+import { EventoService } from 'src/app/service/evento.service';
 
 @Component({
   selector: 'app-evento-agendado',
   templateUrl: './evento-agendado.component.html',
   styleUrls: ['./evento-agendado.component.css']
 })
+
 export class EventoAgendadoComponent implements OnInit {
 
- events =  JSON.parse("{}")
+  calendarOptions = {
+    plugins: [dayGridPlugin],
+    initialView: 'dayGridMonth'
+  };
 
- options: any;
+  events =  JSON.parse("{}")
+    options: any;
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventoService: EventoService) {
+    const name = Calendar.name;
+  }
 
   ngOnInit(): void {
-    this.eventService.getEvents().subscribe(events => {this.events = events;})
+    this.eventoService.getEvents().subscribe(events => {this.events = events;})
 
     this.options = {
       plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
@@ -32,6 +39,4 @@ export class EventoAgendadoComponent implements OnInit {
       }
   }
 }
-     
 }
-

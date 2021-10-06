@@ -4,6 +4,7 @@ import { EventoAgendadoComponent } from './modulo-evento/components/evento-agend
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import {FullCalendarModule} from 'primeng/fullcalendar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -16,10 +17,9 @@ import { PageNotificationModule, BreadcrumbModule, MenuModule, ErrorStackModule 
 import { ErrorModule, SecurityModule, VersionTagModule } from '@nuvem/angular-base';
 import { DiarioErrosComponent } from './components/diario-erros/diario-erros.component';
 import { BlockUIModule } from 'ng-block-ui';
+import { EventoRoutingModule } from './modulo-evento/evento-routing/evento-routing.module';
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
 import {TableModule} from 'primeng/table';
-import {FullCalendarModule} from 'primeng/fullcalendar';
-import { MensagemComponent } from './components/mensagem/mensagem.component';
 
 import {MultiSelectModule} from 'primeng/multiselect';
 
@@ -31,10 +31,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
         DiarioErrosComponent,
         EventoComponent,
         EventoAgendadoComponent,
-        EventoNovoComponent,
-        MensagemComponent
-    
-        
+        EventoNovoComponent
     ],
     imports: [
         BlockUIModule.forRoot({
