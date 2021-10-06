@@ -16,13 +16,13 @@ public class UsuarioListagemDTO implements Serializable {
     private String patrocinador;
     private String email;
     private SelectDTO cargo;
-    private boolean active;
+    private boolean status;
 
-    public UsuarioListagemDTO(Long id, String nome, String email, SelectDTO cargo, boolean active) {
+    public UsuarioListagemDTO(Long id, String nome, String email, SelectDTO cargo, boolean status) {
         this.id = id;
         this.patrocinador = patrocinador;
         this.email = email;
         this.cargo = cargo;
-        this.active = active;
+        this.status = status;
     }
 }

@@ -1,3 +1,4 @@
+import { AtivoPipe } from './modulo-usuario/pipes/ativo.pipe';
 import { UsuarioNovoComponent } from './modulo-usuario/components/usuario-novo/usuario-novo.component';
 import { EventoNovoComponent } from './modulo-evento/components/evento-novo/evento-novo.component';
 import { EventoAgendadoComponent } from './modulo-evento/components/evento-agendado/evento-agendado.component';

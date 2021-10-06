@@ -49,7 +49,7 @@ export class UsuarioNovoComponent implements OnInit {
   public criaFormulario(): void {
     this.usuarioForm = this.fb.group({
       id: [null],
-      patrocinador: ['', Validators.required],
+      nome: ['', Validators.required],
       email: ['', Validators.required],
       dataNascimento: ['', Validators.required],
       cpf: ['', Validators.required],
