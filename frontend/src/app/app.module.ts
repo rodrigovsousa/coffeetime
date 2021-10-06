@@ -1,3 +1,4 @@
+import { UsuarioNovoComponent } from './modulo-usuario/components/usuario-novo/usuario-novo.component';
 import { EventoNovoComponent } from './modulo-evento/components/evento-novo/evento-novo.component';
 import { EventoAgendadoComponent } from './modulo-evento/components/evento-agendado/evento-agendado.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { EventoRoutingModule } from './modulo-evento/evento-routing/evento-routi
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
 import {TableModule} from 'primeng/table';
 
+import {MultiSelectModule} from 'primeng/multiselect';
 
 @NgModule({
     declarations: [
@@ -49,6 +51,7 @@ import {TableModule} from 'primeng/table';
         MenuModule,
         TableModule,
         FullCalendarModule,
+        MultiSelectModule
         
     ],
     providers: [

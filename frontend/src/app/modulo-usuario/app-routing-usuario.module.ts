@@ -5,11 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', component: UsuarioComponent, children: [
     { path: '', component: UsuarioListarComponent },
     { path: 'cadastrar', component: UsuarioNovoComponent }
-  ]},
-];
+  
+]
 
 @NgModule({
   declarations: [],

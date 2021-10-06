@@ -1,4 +1,4 @@
-export default interface Select {
-    value: any;
-    nome: string;
+export class Select {
+    value: number;
+    label: string;
 }

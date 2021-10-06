@@ -19,7 +19,7 @@ export class EventoAgendadoComponent implements OnInit {
     initialView: 'dayGridMonth'
   };
 
-    eventos: any[];
+  events =  JSON.parse("{}")
     options: any;
 
   constructor(private eventoService: EventoService) {
@@ -27,7 +27,7 @@ export class EventoAgendadoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.eventService.getEvents().subscribe(events => {this.events = events;})
+    this.eventoService.getEvents().subscribe(events => {this.events = events;})
 
     this.options = {
       plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
@@ -39,4 +39,4 @@ export class EventoAgendadoComponent implements OnInit {
       }
   }
 }
-
+}
