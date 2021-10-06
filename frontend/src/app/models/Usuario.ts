@@ -3,7 +3,7 @@ import { Select } from "./Select";
 
 export default interface Usuario {
     id: string;
-    patrocinador: string;
+    nome: string;
     cpf: string;
     email: string;
     dataDeNascimento: any;
