@@ -19,7 +19,7 @@ import java.util.List;
 public class UsuarioFiltro implements EntityFiltro{
 
     private Long id;
-    private String nome;
+    private String patrocinador;
     private String cargo;
     private String email;
     private String cpf;
