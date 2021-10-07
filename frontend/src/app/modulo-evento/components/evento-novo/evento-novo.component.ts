@@ -26,8 +26,8 @@ export class EventoNovoComponent implements OnInit {
   public fb: FormBuilder  = new FormBuilder();
 
   usuario: Usuario[];
+  public opcoesUsuarios: SelectItem[];
   //cargos: SelectItem[] = [];
-  evento: Evento;
 
   constructor(
     private usuarioService: UsuarioService, 
@@ -42,16 +42,24 @@ export class EventoNovoComponent implements OnInit {
     
   }
 
-  public criarEvento(evento: Evento) {
-    this.eventoService.criarEvento(evento).subscribe(() => {
-      return this.evento
-    })
+  public formataMotivo(evento: Evento): void {
+    evento.motivo = { label: this.eventoForm.get('motivo').value } as Select;
+  }
+
+  public criarEvento() {
+    let idUsuariosSelecionados: number[] = this.opcoesUsuarios.map(opcaoUsuario => opcaoUsuario.value);
+    this.eventoForm.get('patrocinador').setValue(this.usuario.filter((usuarioLista: Usuario) => idUsuariosSelecionados.includes(usuarioLista.id)));
+    let evento: Evento = this.eventoForm.getRawValue();
+    this.formatarData(evento);
+    this.formataMotivo(evento);
+    this.eventoService.criarEvento(evento).subscribe(() => { })
   }  
 
 
   public getUsuarios(): void {
-    this.usuarioService.getUsuarioDropDown().subscribe((res) => {
+    this.usuarioService.getUsuario().subscribe((res) => {
       this.usuario = res;
+      this.opcoesUsuarios = this.usuario.map((usuarioConsiderado: Usuario) => ({value: usuarioConsiderado.id, label: usuarioConsiderado.nome}));
   });
   }
 
@@ -59,7 +67,7 @@ export class EventoNovoComponent implements OnInit {
     this.eventoForm = this.fb.group({
       id: [null],
       nome: [''],
-      data: [],
+      data: [''],
       valor: [''],
       motivo: [''],
     patrocinador: [''],
@@ -70,12 +78,12 @@ export class EventoNovoComponent implements OnInit {
     this.router.navigateByUrl('/')
   }
 
-  /*public formatarData(evento: Evento): void {
+  public formatarData(evento: Evento): void {
     let data: moment.Moment = moment.utc(this.eventoForm.value.data).local();
     evento.data = data.format('DD/MM/YYYY');
   }
 
-  public criar(): void {
+ /* public criar(): void {
     if(!this.eventoForm.valid) {
       this.mensagem.add({ severity: 'error', summary: MessagemUtils.TITULO_DADOS_INVALIDOS, detail: MessagemUtils.MENSAGEM_ERRO_PREENCHIMENTO})
       return;

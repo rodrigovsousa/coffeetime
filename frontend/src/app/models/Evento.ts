@@ -4,8 +4,8 @@ import Situacao from "./Situacao";
 
 export default interface Evento {
     id: any;
-    data: string;
+    data: any;
     valor: number;
-    motivo: string;
+    motivo: SelectItem;
     patrocinador: SelectItem[]
 }
