@@ -24,14 +24,11 @@ public class EventoDTO implements Serializable {
     private Double valor;
 
     @NotBlank
-    private SelectDTO situacao;
-
-    @NotBlank
     @Max(30)
     private SelectDTO motivo;
 
     @NotBlank
-    private String patrocinador;
+    private List<UsuarioDTO> patrocinador;
 
 }
 

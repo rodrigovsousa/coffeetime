@@ -2,11 +2,13 @@ package g5.projeto.dbcoffeetime.service;
 
 import g5.projeto.dbcoffeetime.domain.Usuario;
 import g5.projeto.dbcoffeetime.repositorio.UsuarioRepositorio;
+import g5.projeto.dbcoffeetime.service.dto.SelectDTO;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioListagemDTO;
 import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.UsuarioFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.ListagemUsuarioMapper;
+import g5.projeto.dbcoffeetime.service.mapper.UsuarioDropdownMapper;
 import g5.projeto.dbcoffeetime.service.mapper.UsuarioMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,10 +22,15 @@ public class UsuarioServico {
 
     private final UsuarioRepositorio repositorio;
     private final ListagemUsuarioMapper listagemUsuarioMapper;
+    private final UsuarioDropdownMapper dropdownMapper;
     private final UsuarioMapper mapper;
 
     public List<UsuarioListagemDTO> findAll(){
         return listagemUsuarioMapper.toDto(repositorio.findAll());
+    }
+
+    public List<SelectDTO> findAllDropDown(){
+        return dropdownMapper.toDto(repositorio.findAll());
     }
 
     public List<UsuarioDTO> obterTodosFiltrado(UsuarioFiltro filtro){

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FullCalendar} from 'primeng/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { Calendar } from '@fullcalendar/core';
 import { EventoService } from 'src/app/service/evento.service';
+import EventoCalendar from 'src/app/models/Evento-Calendar';
+import { title } from 'process';
 
 @Component({
   selector: 'app-evento-agendado',
@@ -19,7 +20,7 @@ export class EventoAgendadoComponent implements OnInit {
     initialView: 'dayGridMonth'
   };
 
-  events =  JSON.parse("{}")
+    events: EventoCalendar[];
     options: any;
 
   constructor(private eventoService: EventoService) {
@@ -27,16 +28,24 @@ export class EventoAgendadoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.eventoService.getEvents().subscribe(events => {this.events = events;})
+    this.obterEventos();
+    this.construirOptions();
+}
 
-    this.options = {
-      plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
-      defaultDate: '2021-10-04',
-      header: {
-          left: 'prev,next',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-      }
-  }
+public obterEventos(){
+  this.eventoService.getEventoCalendar().subscribe((res) => this.events = res);
+
+}
+
+public construirOptions(){
+  this.options = {
+    plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+    defaultDate: '2021-10-08',
+    header: {
+        left: 'prev,next',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+    }
+}
 }
 }

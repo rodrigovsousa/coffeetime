@@ -5,9 +5,12 @@ import g5.projeto.dbcoffeetime.repositorio.EventoRepositorio;
 import g5.projeto.dbcoffeetime.repositorio.UsuarioEventoRepositorio;
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
+import g5.projeto.dbcoffeetime.service.dto.FullCalendarDTO;
 import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.EventoMapper;
+import g5.projeto.dbcoffeetime.service.mapper.FullCalendarMapper;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -19,6 +22,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class EventoServico {
 
 
@@ -26,15 +30,7 @@ public class EventoServico {
     private final EventoRepositorio eventoRepositorio;
     private final EventoMapper eventoMapper;
     private final UsuarioEventoRepositorio usuarioEventoRepositorio;
-
-    public EventoServico(EmailServico emailServico, EventoRepositorio eventoRepositorio, EventoMapper eventoMapper,
-                         UsuarioEventoRepositorio usuarioEventoRepositorio) {
-        this.emailServico = emailServico;
-        this.eventoRepositorio = eventoRepositorio;
-        this.eventoMapper = eventoMapper;
-        this.usuarioEventoRepositorio = usuarioEventoRepositorio;
-
-    }
+    private final FullCalendarMapper fullCalendarMapper;
 
 
     @Scheduled(cron = "0 23 15 * * *")
@@ -82,6 +78,10 @@ public class EventoServico {
         Evento entity = eventoMapper.toEntity(dto);
         entity = eventoRepositorio.save(entity);
         return eventoMapper.toDto(entity);
+    }
+
+    public List<FullCalendarDTO> obterEventos(){
+        return this.fullCalendarMapper.toDto(this.eventoRepositorio.findAll());
     }
 
 

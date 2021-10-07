@@ -1,5 +1,3 @@
-import { AtivoPipe } from './modulo-usuario/pipes/ativo.pipe';
-import { UsuarioNovoComponent } from './modulo-usuario/components/usuario-novo/usuario-novo.component';
 import { EventoNovoComponent } from './modulo-evento/components/evento-novo/evento-novo.component';
 import { EventoAgendadoComponent } from './modulo-evento/components/evento-agendado/evento-agendado.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,11 +16,11 @@ import { PageNotificationModule, BreadcrumbModule, MenuModule, ErrorStackModule 
 import { ErrorModule, SecurityModule, VersionTagModule } from '@nuvem/angular-base';
 import { DiarioErrosComponent } from './components/diario-erros/diario-erros.component';
 import { BlockUIModule } from 'ng-block-ui';
-import { EventoRoutingModule } from './modulo-evento/evento-routing/evento-routing.module';
 import { EventoComponent } from './modulo-evento/components/evento/evento.component';
 import {TableModule} from 'primeng/table';
-
 import {MultiSelectModule} from 'primeng/multiselect';
+import { EventoListarComponent } from './modulo-evento/components/evento-listar/evento-listar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
     declarations: [
@@ -30,9 +28,10 @@ import {MultiSelectModule} from 'primeng/multiselect';
         AppTopbarComponent,
         AppFooterComponent,
         DiarioErrosComponent,
-        EventoComponent,
         EventoAgendadoComponent,
-        EventoNovoComponent
+        EventoListarComponent,
+        HomeComponent
+       
     ],
     imports: [
         BlockUIModule.forRoot({

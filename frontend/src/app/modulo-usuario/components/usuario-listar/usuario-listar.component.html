@@ -1,8 +1,8 @@
 
-<h3 class="first">Basic</h3>
-<p-table [value]="usuario">
-        <ng-template pTemplate="header">
-                <tr>
+<h1 class="first" >LISTA DE USUÁRIOS</h1>
+<p-table id="template" [value]="usuario">
+        <ng-template  pTemplate="header">
+                <tr class="cabeca">
                         <th pSortableColum="id">Id</th>
                         <th pSortableColum="nome">Nome</th>
                         <th pSortableColum="email">Email</th>
@@ -10,7 +10,7 @@
                 </tr>
         </ng-template>
         
-        <ng-template pTemplate="body" let-usuarioConsiderado>
+        <ng-template  pTemplate="body" let-usuarioConsiderado>
                 <tr>
                         <td>{{usuarioConsiderado.id}}</td>
                         <td>{{usuarioConsiderado.nome}}</td>

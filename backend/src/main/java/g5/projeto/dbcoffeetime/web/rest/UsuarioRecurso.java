@@ -1,6 +1,7 @@
 package g5.projeto.dbcoffeetime.web.rest;
 
 import g5.projeto.dbcoffeetime.service.UsuarioServico;
+import g5.projeto.dbcoffeetime.service.dto.SelectDTO;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioListagemDTO;
 import g5.projeto.dbcoffeetime.service.filtro.UsuarioFiltro;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -23,6 +25,11 @@ public class UsuarioRecurso {
     @GetMapping
     public ResponseEntity<List<UsuarioListagemDTO>> findAll(){
         return ResponseEntity.ok(servico.findAll());
+    }
+
+    @GetMapping("/dropdown")
+    public ResponseEntity<List<SelectDTO>> findAllDropDown(){
+        return ResponseEntity.ok(servico.findAllDropDown());
     }
 
     @GetMapping("filtro")
