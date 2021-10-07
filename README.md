@@ -1,2 +1,2 @@
-# coffeetime
-Sistema de gerenciamento do Café da Tarde
+# CoffeeTime
+# Sistema de gerenciamento do Café da Tarde
