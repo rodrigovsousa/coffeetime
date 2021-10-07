@@ -20,7 +20,7 @@ import { EventoComponent } from './modulo-evento/components/evento/evento.compon
 import {TableModule} from 'primeng/table';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { EventoListarComponent } from './modulo-evento/components/evento-listar/evento-listar.component';
-import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
     declarations: [
@@ -30,7 +30,7 @@ import { HomeComponent } from './components/home/home.component';
         DiarioErrosComponent,
         EventoAgendadoComponent,
         EventoListarComponent,
-        HomeComponent
+        
        
     ],
     imports: [

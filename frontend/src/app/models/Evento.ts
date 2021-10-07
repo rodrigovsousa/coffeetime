@@ -1,11 +1,11 @@
+import { SelectItem } from 'primeng';
 import Usuario from "./Usuario";
 import Situacao from "./Situacao";
 
 export default interface Evento {
-    id?: string;
-    data: any;
+    id: any;
+    data: string;
     valor: number;
     motivo: string;
-    patrocinador: [];
-    usuario: Usuario[];
+    patrocinador: SelectItem[]
 }

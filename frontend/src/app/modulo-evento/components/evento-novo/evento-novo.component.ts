@@ -62,7 +62,7 @@ export class EventoNovoComponent implements OnInit {
       data: [],
       valor: [''],
       motivo: [''],
-    //  patrocinador: [''],
+    patrocinador: [''],
     });
   }
 
