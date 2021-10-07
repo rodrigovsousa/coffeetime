@@ -6,8 +6,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
@@ -34,7 +32,7 @@ public class Usuario  implements Serializable {
     private LocalDate dataDeNascimento;
 
     @Column(name = "STATUS")
-    private Boolean status;
+    private boolean status;
 
     @Column(name = "TELEFONE")
     private String telefone;
@@ -42,8 +40,5 @@ public class Usuario  implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CARGO_ID")
     private Cargo cargo;
-
-    @ManyToMany(mappedBy = "nome")
-    private List<Evento> eventos = new ArrayList<>();
 
 }

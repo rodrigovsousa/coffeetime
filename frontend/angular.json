@@ -28,6 +28,8 @@
                 "node_modules/@fullcalendar/daygrid/main.min.css",
                 "node_modules/@fullcalendar/timegrid/main.min.css",
                 "node_modules/primeflex/primeflex.css",
+        
+        
               "src/styles.scss"
             ],
             "scripts": [

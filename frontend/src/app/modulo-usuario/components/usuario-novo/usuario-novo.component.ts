@@ -51,7 +51,7 @@ export class UsuarioNovoComponent implements OnInit {
       id: [null],
       nome: ['', Validators.required],
       email: ['', Validators.required],
-      dataNascimento: ['', Validators.required],
+      dataDeNascimento: ['', Validators.required],
       cpf: ['', Validators.required],
       telefone: [''],
       status: [true],
@@ -64,7 +64,7 @@ export class UsuarioNovoComponent implements OnInit {
   }
 
   public formatarData(usuario: Usuario): void {
-    let data: moment.Moment = moment.utc(this.usuarioForm.value.dataNascimento).local();
+    let data: moment.Moment = moment.utc(this.usuarioForm.value.dataDeNascimento).local();
     usuario.dataDeNascimento = data.format('DD/MM/YYYY');
   }
 
