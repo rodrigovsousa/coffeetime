@@ -15,7 +15,7 @@ A equipe ficou responsável tanto pelo backend quanto pelo frontend.
 
 * Angular
 * Typescript
-* Spring Data
+* Spring Data JPA
 * PostgreSQL
 * Docker
 * Liquibase
