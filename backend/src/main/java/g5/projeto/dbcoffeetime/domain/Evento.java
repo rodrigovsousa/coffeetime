@@ -35,7 +35,7 @@ public class Evento implements Serializable {
     private Motivo motivo;
 
 
-   @ManyToMany
+   @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_evento",
             joinColumns = @JoinColumn(name ="EVENTO_ID"),
             inverseJoinColumns = @JoinColumn(name = "USUARIO_ID"))

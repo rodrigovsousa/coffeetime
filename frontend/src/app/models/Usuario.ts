@@ -8,6 +8,6 @@ export default interface Usuario {
     email: string;
     dataDeNascimento: any;
     status: boolean;
-    telefone: string;
+    telefone: number;
     cargo: Select;
 }
