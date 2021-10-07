@@ -18,6 +18,10 @@ export class UsuarioService {
         return this.http.get<Usuario[]>(this.PATH);
     }
 
+    getUsuarioDropDown() {
+      return this.http.get<Usuario[]>(this.PATH.concat('/dropdown'));
+  }
+
     criarUsuario(usuario: Usuario) {
         return this.http.post<Usuario>(this.PATH, usuario);
     }
