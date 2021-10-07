@@ -35,7 +35,7 @@ public class EventoRecurso {
         return ResponseEntity.ok().body(eventoDTO);
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<EventoDTO>> findAll(){
          List <EventoDTO> eventos = eventoServico.buscarTodos();
          return ResponseEntity.ok().body(eventos);

@@ -6,7 +6,6 @@ import g5.projeto.dbcoffeetime.domain.UsuarioEventoId;
 import g5.projeto.dbcoffeetime.repositorio.EventoPatrocinadorRepositorio;
 import g5.projeto.dbcoffeetime.repositorio.EventoRepositorio;
 import g5.projeto.dbcoffeetime.repositorio.UsuarioEventoRepositorio;
-import g5.projeto.dbcoffeetime.repositorio.UsuarioRepositorio;
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import g5.projeto.dbcoffeetime.service.dto.EventoPatrocindorDTO;

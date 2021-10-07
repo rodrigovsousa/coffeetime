@@ -38,7 +38,7 @@ public class UsuarioFiltro implements EntityFiltro{
         }
 
         if (patrocinador != null){
-            predicates.add(cb.like(root.get(Usuario_.patrocinador),"%" + patrocinador + "%"));
+            predicates.add(cb.like(root.get(Usuario_.nome),"%" + patrocinador + "%"));
         }
 
         if (email != null){

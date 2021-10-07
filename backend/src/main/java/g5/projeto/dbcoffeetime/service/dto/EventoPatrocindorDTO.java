@@ -8,5 +8,4 @@ import lombok.Setter;
 @Setter
 public class EventoPatrocindorDTO {
     private UsuarioDTO usuario;
-    private EventoDTO evento;
 }

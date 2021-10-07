@@ -39,10 +39,10 @@ public class EventoFiltro implements EntityFiltro<Evento> {
             predicates.add(cb.greaterThanOrEqualTo(root.get(Evento_.data), date));
 
         }
-        /*if (Objects.nonNull(patrocinador)) {
-            predicates.add(cb.like(root.get(Evento_.patrocinador), "%" + patrocinador + "%")
+        if (Objects.nonNull(patrocinador)) {
+            predicates.add(cb.like(root.get(Evento_.nome), "%" + patrocinador + "%")
             );
-        }*/
+        }
         if (Objects.nonNull(id)) {
             Expression<?> param = null;
             predicates.add(cb.equal(root.get(Evento_.id), id));
