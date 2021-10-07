@@ -43,4 +43,7 @@ public class UsuarioDTO implements Serializable {
     @NotBlank
     private SelectDTO cargo;
 
+    @NotBlank
+    private List<EventoDTO> eventos;
+
 }

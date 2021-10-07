@@ -1,7 +1,6 @@
 package g5.projeto.dbcoffeetime.web.rest;
 import g5.projeto.dbcoffeetime.service.EventoServico;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
-import g5.projeto.dbcoffeetime.service.dto.FullCalendarDTO;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,11 +20,6 @@ public class EventoRecurso {
     @GetMapping("/filtro")
     ResponseEntity<List<EventoDTO>> filtrarData(EventoFiltro filtro) {
         return ResponseEntity.ok(eventoServico.filtrarData(filtro));
-    }
-
-    @GetMapping("/calendario")
-    ResponseEntity<List<FullCalendarDTO>> obterEventos() {
-        return ResponseEntity.ok(eventoServico.obterEventos());
     }
 
 
