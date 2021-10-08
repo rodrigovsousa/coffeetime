@@ -40,7 +40,7 @@ public class Evento implements Serializable {
     @JoinColumn(name = "SITUACAO_ID")
     private Situacao situacao;
 
-    @OneToMany(mappedBy = "evento", orphanRemoval = true)
+    @OneToMany(mappedBy = "evento", orphanRemoval = true, fetch  = FetchType.EAGER)
     private List<EventoPatrocinador> patrocinadores = new ArrayList<>();
 
 }
