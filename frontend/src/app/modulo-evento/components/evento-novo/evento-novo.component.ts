@@ -36,6 +36,7 @@ export class EventoNovoComponent implements OnInit {
     private usuarioService: UsuarioService,
     private eventoService: EventoService,
     private motivo: MotivoService,
+    private mensagem: MessageService,
     private router: Router) {
 
   }
@@ -57,8 +58,8 @@ export class EventoNovoComponent implements OnInit {
     let evento: Evento = this.eventoForm.getRawValue();
     this.formatarData(evento);
     this.formataMotivo(evento);
-    console.log(evento)
-    this.eventoService.criarEvento(evento).subscribe(() => { })
+    this.eventoService.criarEvento(evento).subscribe(() => { });
+    this.mensagem.add({ severity: 'success', summary: MessagemUtils.TITULO_SUCESSO, detail: MessagemUtils.MENSAGEM_DADOS_SALVOS });
   }
 
 
