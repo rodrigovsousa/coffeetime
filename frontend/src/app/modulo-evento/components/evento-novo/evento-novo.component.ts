@@ -13,6 +13,7 @@ import Usuario from 'src/app/models/Usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import * as moment from 'moment';
 import Evento from 'src/app/models/Evento';
+import {MotivoService} from '../../../service/motivo.service';
 
 
 @Component({
@@ -26,12 +27,15 @@ export class EventoNovoComponent implements OnInit {
   public fb: FormBuilder  = new FormBuilder();
 
   usuario: Usuario[];
+  motivos: SelectItem[];
   public opcoesUsuarios: SelectItem[];
+  public opcoesMotivos: SelectItem[];
   //cargos: SelectItem[] = [];
 
   constructor(
-    private usuarioService: UsuarioService, 
+    private usuarioService: UsuarioService,
     private eventoService: EventoService,
+    private motivo: MotivoService,
     private router: Router) {
 
   }
@@ -39,21 +43,23 @@ export class EventoNovoComponent implements OnInit {
   ngOnInit(): void {
     this.criaFormulario();
     this.getUsuarios();
-    
+    this.getMotivo();
+
   }
 
   public formataMotivo(evento: Evento): void {
-    evento.motivo = { label: this.eventoForm.get('motivo').value } as Select;
+    evento.motivo = { value: this.eventoForm.get('motivo').value } as Select;
   }
 
   public criarEvento() {
     let idUsuariosSelecionados: number[] = this.opcoesUsuarios.map(opcaoUsuario => opcaoUsuario.value);
-    this.eventoForm.get('patrocinador').setValue(this.usuario.filter((usuarioLista: Usuario) => idUsuariosSelecionados.includes(usuarioLista.id)));
+    this.eventoForm.get('patrocinadores').setValue(this.usuario.filter((usuarioLista: Usuario) => idUsuariosSelecionados.includes(usuarioLista.id)));
     let evento: Evento = this.eventoForm.getRawValue();
     this.formatarData(evento);
     this.formataMotivo(evento);
+    console.log(evento)
     this.eventoService.criarEvento(evento).subscribe(() => { })
-  }  
+  }
 
 
   public getUsuarios(): void {
@@ -63,14 +69,23 @@ export class EventoNovoComponent implements OnInit {
   });
   }
 
+    public getMotivo(): void {
+        this.motivo.listar().subscribe((res) => {
+            console.log(res)
+            this.motivos = res;
+            this.opcoesMotivos = this.motivos;
+            this.opcoesMotivos.unshift({value: null, label: "Selecione"})
+        });
+    }
+
   public criaFormulario(): void {
     this.eventoForm = this.fb.group({
       id: [null],
       nome: [''],
       data: [''],
       valor: [''],
-      motivo: [''],
-    patrocinador: [''],
+      motivo: [null, Validators.required],
+        patrocinadores: [''],
     });
   }
 

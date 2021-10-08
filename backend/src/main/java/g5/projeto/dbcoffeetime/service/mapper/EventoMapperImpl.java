@@ -1,9 +1,6 @@
 package g5.projeto.dbcoffeetime.service.mapper;
 
-import g5.projeto.dbcoffeetime.domain.Evento;
-import g5.projeto.dbcoffeetime.domain.EventoPatrocinador;
-import g5.projeto.dbcoffeetime.domain.EventoPatrocinadorId;
-import g5.projeto.dbcoffeetime.domain.Usuario;
+import g5.projeto.dbcoffeetime.domain.*;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
 import g5.projeto.dbcoffeetime.service.dto.EventoPatrocindorDTO;
 import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
@@ -67,6 +64,7 @@ public class EventoMapperImpl implements EventoMapper {
         evento.setSituacao(situacaoMapper.toEntity(eventoDTO.getSituacao()));
         evento.setMotivo(motivoMapper.toEntity(eventoDTO.getMotivo()));
         evento.setValor(eventoDTO.getValor());
+        evento.setSituacao(new Situacao(1L));
 
         List<Usuario> usuarios = usuarioMapper.toEntity(eventoDTO.getPatrocinadores());
 
