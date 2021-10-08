@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: db-coffeetime
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: userCoffee
+    password: userCoffee
+  liquibase:
+    change-log: classpath:/config/liquibase/master.xml
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: grupo5coffee@gmail.com
+    password: grupo5senha
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          quitwait: false
+
+
+
+application:
+  email:
+    endereco-remetente: grupo5coffee@gmail.com
+    nome-remetente: CoffeeTime

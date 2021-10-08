@@ -1,0 +1,21 @@
+<p>evento-listar works!</p>
+<h1 class="first" >Eventos Agendados</h1>
+<p-table id="template" [value]="evento">
+        <ng-template  pTemplate="header">
+                <tr class="cabeca">
+                        <th pSortableColum="patrocinador">Patrocinador</th>
+                        <th pSortableColum="data">Data</th>
+                        <th pSortableColum="valor">Valor</th>
+                        <th pSortableColum="motivo"> Motivo</th>
+                </tr>
+        </ng-template>
+        
+        <ng-template  pTemplate="body" let-usuarioConsiderado>
+                <tr>
+                        <td>{{usuarioConsiderado.patrocinador}}</td>
+                        <td>{{usuarioConsiderado.data}}</td>
+                        <td>{{usuarioConsiderado.valor || BRL}}</td>
+                        <td>{{usuarioConsiderado.motivo.label}}</td>
+                </tr>
+        </ng-template>
+</p-table>

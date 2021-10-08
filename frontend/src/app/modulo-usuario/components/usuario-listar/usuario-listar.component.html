@@ -1,0 +1,24 @@
+
+<h1 class="first" >LISTA DE USUÁRIOS</h1>
+<p-table id="template" [value]="usuario">
+        <ng-template  pTemplate="header">
+                <tr class="cabeca">
+                
+                        <th pSortableColum="nome">Nome</th>
+                        <th pSortableColum="email">Email</th>
+                        <th pSortableColum="cargo">Cargo</th>
+                        <th pSortableColum="status">Status</th>
+                        
+                </tr>
+        </ng-template>
+        
+        <ng-template  pTemplate="body" let-usuarioConsiderado>
+                <tr>
+                        
+                        <td>{{usuarioConsiderado.nome}}</td>
+                        <td>{{usuarioConsiderado.email}}</td>
+                        <td>{{usuarioConsiderado.cargo.label}}</td>
+                        <td>{{usuarioConsiderado.status | ativo}}</td>
+                </tr>
+        </ng-template>
+</p-table>
