@@ -13,14 +13,14 @@ import java.io.Serializable;
 public class UsuarioListagemDTO implements Serializable {
 
     private Long id;
-    private String patrocinador;
+    private String nome;
     private String email;
     private SelectDTO cargo;
     private boolean status;
 
     public UsuarioListagemDTO(Long id, String nome, String email, SelectDTO cargo, boolean status) {
         this.id = id;
-        this.patrocinador = patrocinador;
+        this.nome = nome;
         this.email = email;
         this.cargo = cargo;
         this.status = status;

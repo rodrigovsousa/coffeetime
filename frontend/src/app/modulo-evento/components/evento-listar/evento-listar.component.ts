@@ -1,8 +1,8 @@
 import { SelectItem } from 'primeng/api';
 
 import { Component, OnInit } from '@angular/core';
-import Evento from 'src/app/models/Evento';
 import { EventoService } from 'src/app/service/evento.service';
+import ConsutaEvento from '../../../models/ConsutaEvento';
 
 @Component({
   selector: 'app-evento-listar',
@@ -11,7 +11,7 @@ import { EventoService } from 'src/app/service/evento.service';
 })
 export class EventoListarComponent implements OnInit {
 
-  evento: Evento[];
+  evento: ConsutaEvento[];
 
 
   constructor(private eventoService: EventoService) { }
@@ -19,6 +19,9 @@ export class EventoListarComponent implements OnInit {
   ngOnInit(): void {
     this.eventoService.getEventos().subscribe((resultado) => {
       this.evento = resultado;
+      this.evento.forEach(evento => {
+          evento.nomesPatrocinadores = evento.patrocinadores.map(it => it.nome ).join(',');
+      });
   });
   }
 
