@@ -3,6 +3,7 @@ package g5.projeto.dbcoffeetime.service;
 import g5.projeto.dbcoffeetime.domain.Motivo;
 import g5.projeto.dbcoffeetime.repositorio.MotivoRepositorio;
 import g5.projeto.dbcoffeetime.service.dto.MotivoDTO;
+import g5.projeto.dbcoffeetime.service.dto.SelectDTO;
 import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.MotivoFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.MotivoMapper;
@@ -22,19 +23,19 @@ public class MotivoServico {
     public final MotivoMapper mapper;
     private final MotivoFiltro motivoFiltro;
 
-    public List<MotivoDTO> findAll(){
+    public List<SelectDTO> findAll(){
         return mapper.toDto(repositorio.findAll());
     }
 
-    public List<MotivoDTO> findAllTitle(MotivoFiltro filtro){
+    public List<SelectDTO> findAllTitle(MotivoFiltro filtro){
         return mapper.toDto(repositorio.findAll(filtro.filter()));
     }
 
-    public MotivoDTO findById(Long id) {
+    public SelectDTO findById(Long id) {
         return repositorio.findById(id).map(mapper::toDto).orElseThrow(ResourceNotFoundException::new);
     }
 
-    public MotivoDTO save(MotivoDTO dto) {
+    public SelectDTO save(SelectDTO dto) {
         Motivo entity = mapper.toEntity(dto);
         entity = repositorio.save(entity);
         return mapper.toDto(entity);

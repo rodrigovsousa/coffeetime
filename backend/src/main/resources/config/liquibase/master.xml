@@ -10,7 +10,7 @@
     <include file="config/liquibase/changelogs/202109151012_create_table_motivo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelogs/202109161006_create_table_evento.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelogs/202109152021_create_table_usuario.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelogs/202110041959_apagar_patrocinador.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelogs/202109161007_create_table_usuario_evento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelogs/202110041960_create_table_evento_patrocinador.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelogs/202109151013_insert_in_cargo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelogs/202110061006_create_table_usuario_evento.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>

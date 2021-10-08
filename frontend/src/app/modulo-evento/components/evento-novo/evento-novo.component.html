@@ -5,27 +5,27 @@
             <div class="ui-g-12">
                 <div class="ui-g-6 ui-g-offset-3">
                     <span class="ui-inputgroup-addon"><i class="material-icons">perm_identity</i>Patrocinador</span>
-                    <p-multiSelect [options]="usuario" [label]="nome">Selecione</p-multiSelect>
+                    <p-multiSelect [options]="opcoesUsuarios" [label]="nome">Selecione</p-multiSelect>
                 </div>
             </div>
 
             <div class="ui-g-12">
                 <div class="ui-g-6 ui-g-offset-3">
                     <span class="ui-inputgroup-addon"><i class="material-icons">assignment_ind</i>Motivo</span>
-                    <input type="text" formControlName='motivo' name="motivo" pInputTextarea>
+                    <input type="text" formControlName="motivo" name="motivo" pInputTextarea>
                     
                 </div>
             </div>
             <div class="ui-g-12">
                 <div class="ui-g-6 ui-g-offset-3">
                     <span class="ui-inputgroup-addon"><i class="pi pi-calendar"></i>Data do Evento</span>
-                    <p-calendar [disabledDates]="" [disabledDays]="[0,6]" formControlName='data'></p-calendar>
+                    <p-calendar [disabledDates]="" [disabledDays]="[0,6]" formControlName="data"></p-calendar>
                 </div>
             </div>    
             <div class="ui-g-12">
                 <div class="ui-g-6 ui-g-offset-3">
                     <span class="ui-inputgroup-addon"><i class="material-icons">attach_money</i>Valor</span>
-                    <input type="number" formControlName='valor' name="valor" pInputText  [readonlyInput]="true">
+                    <input type="number" formControlName="valor" name="valor" placeholder="R$   "pInputText  [readonlyInput]="true">
                 </div>
             </div> 
             <div class="ui-g-12">

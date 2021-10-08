@@ -28,7 +28,6 @@
             <column name="SITUACAO_ID" type="INTEGER"  remarks="coluna que armzena o ID da situacao do evento">
                 <constraints nullable="false"/>
             </column>
-
         </createTable>
     </changeSet>
 

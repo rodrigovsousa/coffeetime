@@ -1,7 +1,6 @@
 package g5.projeto.dbcoffeetime.web.rest;
 import g5.projeto.dbcoffeetime.service.EventoServico;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
-import g5.projeto.dbcoffeetime.service.dto.FullCalendarDTO;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +22,6 @@ public class EventoRecurso {
         return ResponseEntity.ok(eventoServico.filtrarData(filtro));
     }
 
-    @GetMapping("/calendario")
-    ResponseEntity<List<FullCalendarDTO>> obterEventos() {
-        return ResponseEntity.ok(eventoServico.obterEventos());
-    }
-
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<EventoDTO> findById(@PathVariable Long id) {
@@ -35,7 +29,7 @@ public class EventoRecurso {
         return ResponseEntity.ok().body(eventoDTO);
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<EventoDTO>> findAll(){
          List <EventoDTO> eventos = eventoServico.buscarTodos();
          return ResponseEntity.ok().body(eventos);

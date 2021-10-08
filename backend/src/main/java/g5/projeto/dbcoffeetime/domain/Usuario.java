@@ -1,8 +1,6 @@
 package g5.projeto.dbcoffeetime.domain;
-
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -32,7 +30,7 @@ public class Usuario  implements Serializable {
     private LocalDate dataDeNascimento;
 
     @Column(name = "STATUS")
-    private boolean status;
+    private Boolean status;
 
     @Column(name = "TELEFONE")
     private String telefone;

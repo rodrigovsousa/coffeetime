@@ -2,12 +2,12 @@ import Cargo from "./Cargo";
 import { Select } from "./Select";
 
 export default interface Usuario {
-    id: string;
+    id: number;
     nome: string;
     cpf: string;
     email: string;
     dataDeNascimento: any;
     status: boolean;
-    telefone: string;
+    telefone: number;
     cargo: Select;
 }

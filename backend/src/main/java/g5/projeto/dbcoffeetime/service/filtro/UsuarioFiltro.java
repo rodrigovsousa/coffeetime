@@ -1,13 +1,9 @@
 package g5.projeto.dbcoffeetime.service.filtro;
-
-
 import g5.projeto.dbcoffeetime.domain.Cargo_;
 import g5.projeto.dbcoffeetime.domain.Usuario;
-
 import g5.projeto.dbcoffeetime.domain.Usuario_;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -41,8 +37,8 @@ public class UsuarioFiltro implements EntityFiltro{
             predicates.add(cb.equal(root.get(Usuario_.id), id));
         }
 
-        if (nome != null){
-            predicates.add(cb.like(root.get(Usuario_.nome),"%" + nome + "%"));
+        if (patrocinador != null){
+            predicates.add(cb.like(root.get(Usuario_.nome),"%" + patrocinador + "%"));
         }
 
         if (email != null){
