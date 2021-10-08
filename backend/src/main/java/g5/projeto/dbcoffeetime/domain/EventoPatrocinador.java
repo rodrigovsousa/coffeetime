@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class EventoPatrocinador implements Serializable {
 
     @EmbeddedId
-    private UsuarioEventoId id;
+    private EventoPatrocinadorId id;
 
     @ManyToOne
     @JoinColumns({

@@ -1,14 +1,11 @@
 package g5.projeto.dbcoffeetime.service;
-import g5.projeto.dbcoffeetime.domain.Evento;
-import g5.projeto.dbcoffeetime.domain.EventoPatrocinador;
-import g5.projeto.dbcoffeetime.domain.UsuarioEvento;
-import g5.projeto.dbcoffeetime.domain.UsuarioEventoId;
+import g5.projeto.dbcoffeetime.domain.*;
 import g5.projeto.dbcoffeetime.repositorio.EventoPatrocinadorRepositorio;
 import g5.projeto.dbcoffeetime.repositorio.EventoRepositorio;
 import g5.projeto.dbcoffeetime.repositorio.UsuarioEventoRepositorio;
 import g5.projeto.dbcoffeetime.service.dto.EmailDTO;
 import g5.projeto.dbcoffeetime.service.dto.EventoDTO;
-import g5.projeto.dbcoffeetime.service.dto.EventoPatrocindorDTO;
+import g5.projeto.dbcoffeetime.service.dto.UsuarioDTO;
 import g5.projeto.dbcoffeetime.service.exceptions.ResourceNotFoundException;
 import g5.projeto.dbcoffeetime.service.filtro.EventoFiltro;
 import g5.projeto.dbcoffeetime.service.mapper.EventoMapper;
@@ -26,17 +23,18 @@ public class EventoServico {
 
     private final EmailServico emailServico;
     private final EventoRepositorio eventoRepositorio;
-    private final EventoMapper eventoMapper;
     private final UsuarioEventoRepositorio usuarioEventoRepositorio;
     private final EventoPatrocinadorRepositorio eventoPatrocinadorRepositorio;
+    private final EventoMapper eventoMapper;
 
-    public EventoServico(EmailServico emailServico, EventoRepositorio eventoRepositorio, EventoMapper eventoMapper,
-                         UsuarioEventoRepositorio usuarioEventoRepositorio, EventoPatrocinadorRepositorio eventoPatrocinadorRepositorio) {
+    public EventoServico(EmailServico emailServico, EventoRepositorio eventoRepositorio,
+                         UsuarioEventoRepositorio usuarioEventoRepositorio,
+                         EventoPatrocinadorRepositorio eventoPatrocinadorRepositorio, EventoMapper eventoMapper) {
         this.emailServico = emailServico;
         this.eventoRepositorio = eventoRepositorio;
-        this.eventoMapper = eventoMapper;
         this.usuarioEventoRepositorio = usuarioEventoRepositorio;
         this.eventoPatrocinadorRepositorio = eventoPatrocinadorRepositorio;
+        this.eventoMapper = eventoMapper;
     }
 
 
@@ -86,9 +84,9 @@ public class EventoServico {
         entity = eventoRepositorio.save(entity);
 
 
-        for (EventoPatrocindorDTO patrocinador : dto.getPatrocinadores()){
+        for (UsuarioDTO patrocinador : dto.getPatrocinadores()){
             EventoPatrocinador evetoPatroc = new EventoPatrocinador();
-            evetoPatroc.setId(new UsuarioEventoId(entity.getId(), patrocinador.getUsuario().getId()));
+            evetoPatroc.setId(new EventoPatrocinadorId(entity.getId(), patrocinador.getId()));
             evetoPatroc = eventoPatrocinadorRepositorio.save(evetoPatroc);
             entity.getPatrocinadores().add(evetoPatroc);
         }
