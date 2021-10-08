@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import EventoCalendar from '../models/Evento-Calendar';
 import Evento from '../models/Evento';
+import ConsutaEvento from '../models/ConsutaEvento';
 
 @Injectable({
   providedIn: "root",
@@ -12,7 +13,7 @@ import Evento from '../models/Evento';
 export class EventoService {
 
     constructor(private http: HttpClient) { }
-    private readonly PATH = environment.apiUrl + "/eventos/";    
+    private readonly PATH = environment.apiUrl + "/eventos/";
 
     getEventoCalendar(): Observable<EventoCalendar[]> {
         return this.http.get<EventoCalendar[]>(this.PATH.concat('calendario'));
@@ -23,7 +24,7 @@ export class EventoService {
   }
 
   getEventos() {
-    return this.http.get<Evento[]>(this.PATH);
+    return this.http.get<ConsutaEvento[]>(this.PATH);
 }
 
 }

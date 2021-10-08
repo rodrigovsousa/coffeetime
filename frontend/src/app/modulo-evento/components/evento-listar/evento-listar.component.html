@@ -1,21 +1,23 @@
-<p>evento-listar works!</p>
+
 <h1 class="first" >Eventos Agendados</h1>
 <p-table id="template" [value]="evento">
         <ng-template  pTemplate="header">
                 <tr class="cabeca">
                         <th pSortableColum="patrocinador">Patrocinador</th>
                         <th pSortableColum="data">Data</th>
-                        <th pSortableColum="valor">Valor</th>
+                        <th pSortableColum="valor">Valor Patrocinado</th>
                         <th pSortableColum="motivo"> Motivo</th>
+                        <th pSortableColum="valor">Valor da Galera</th>
                 </tr>
         </ng-template>
-        
+
         <ng-template  pTemplate="body" let-usuarioConsiderado>
                 <tr>
-                        <td>{{usuarioConsiderado.patrocinador}}</td>
+                        <td>{{usuarioConsiderado.nomesPatrocinadores}}</td>
                         <td>{{usuarioConsiderado.data}}</td>
-                        <td>{{usuarioConsiderado.valor || BRL}}</td>
+                        <td>{{usuarioConsiderado.valor / 2 | currency: ["BRL"]}}</td>
                         <td>{{usuarioConsiderado.motivo.label}}</td>
+                        <td>{{usuarioConsiderado.valor / 2 | currency: ["BRL"]}}</td>
                 </tr>
         </ng-template>
 </p-table>

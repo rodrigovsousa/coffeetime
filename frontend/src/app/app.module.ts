@@ -30,8 +30,8 @@ import { EventoListarComponent } from './modulo-evento/components/evento-listar/
         DiarioErrosComponent,
         EventoAgendadoComponent,
         EventoListarComponent,
-
-
+        
+       
     ],
     imports: [
         BlockUIModule.forRoot({
@@ -52,7 +52,7 @@ import { EventoListarComponent } from './modulo-evento/components/evento-listar/
         TableModule,
         FullCalendarModule,
         MultiSelectModule
-
+        
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy }
